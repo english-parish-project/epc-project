@@ -1,3 +1,10 @@
-No churches have been added yet!
+- if @churches.any?
+  - @churches.each do |church|
+    %p= church.name
+    %p= church.date_first_mention_in_text
+    %p= church.town
+    %p= church.county
+- else 
+  No churches have been added yet!
 
-%a(href='#') Add A Church
+=link_to  "Add A Church", new_church_path

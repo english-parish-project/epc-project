@@ -17,8 +17,22 @@ ActiveRecord::Schema.define(version: 20160319190414) do
   enable_extension "plpgsql"
 
   create_table "churches", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "name"
+    t.string   "date_first_mention_in_text"
+    t.text     "first_mention_description"
+    t.string   "date_earliest_extant_fabric"
+    t.boolean  "description_earliest_extant_fabric"
+    t.text     "earliest_extant_fabric_description"
+    t.text     "town"
+    t.string   "buildings_of_england_volume"
+    t.string   "county"
+    t.string   "diocese"
+    t.string   "archdeaconry"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.text     "general_narrative"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
 end
