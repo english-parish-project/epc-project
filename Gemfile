@@ -36,6 +36,7 @@ group :development, :test do
  gem 'warden'
  gem 'shoulda-callback-matchers'
  gem 'awesome_print', require:'ap'
+ gem 'dotenv-rails'
 end
 
 group :development do
