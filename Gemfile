@@ -27,6 +27,12 @@ group :development, :test do
  gem 'rspec-collection_matchers'
  gem 'database_cleaner'
  gem 'factory_girl_rails'
+ gem 'shoulda-matchers'
+ gem 'launchy'
+ gem 'codeclimate-test-reporter'
+ gem 'warden'
+ gem 'shoulda-callback-matchers'
+ gem 'awesome_print', require:'ap'
 end
 
 group :development do

@@ -12,3 +12,6 @@
 !/log/.keep
 /tmp
 .env
+/public
+/npm-debug.log
+/**/DS_Store
