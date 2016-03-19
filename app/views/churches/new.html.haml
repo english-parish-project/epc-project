@@ -1,28 +1,19 @@
 .container
   .col-xs-12
-    = form_for @church do |f|
-      = f.label :name
-      = f.text_field :name
-      = f.label :date_first_mention_in_text
-      = f.text_field :date_first_mention_in_text, collection: @date_ranges, prompt: "Select Date"
-      -# = f.text_field :first_mention_description
-      -# = f.text_field :date_earliest_extant_fabric, collection: @date_ranges, prompt: "Select Date"
-      -# .checkbox
-      -#   = f.input :description_earliest_extant_fabric, label: 'Date Secured?', as: :boolean
-      -# = f.input :earliest_extant_fabric_description
-      -# = f.input :town
-      -# = f.input :buildings_of_england_volume, collection: @volume_options, prompt: "Select Buildings of England Volume"
-      -# = f.input :county, collection: @county_options, prompt: "Select County"
-      -# = f.input :diocese, collection: @dioceses_options, prompt: "Select Diocese"
-      -# = f.input :archdeaconry
-      -# = f.input :latitude
-      -# = f.input :longitude
-      -# = f.input :general_narrative
-      = f.submit "Add Church"
-      
-      
-  -#     = f.label :name
-  -# = f.text_field :name
-  -# = f.label :description
-  -# = f.text_field :description
-  -# = f.file_field :image
+    = simple_form_for @church do |f|
+      = f.input :name
+      = f.input :date_first_mention_in_text, collection: @date_ranges, prompt: "Select Date"
+      = f.input :first_mention_description
+      = f.input :date_earliest_extant_fabric, collection: @date_ranges, prompt: "Select Date"
+      .checkbox
+        = f.input :description_earliest_extant_fabric, label: 'Date Secured?', as: :boolean
+      = f.input :earliest_extant_fabric_description
+      = f.input :general_narrative
+      = f.input :town
+      = f.input :buildings_of_england_volume, collection: @volume_options, prompt: "Select Buildings of England Volume"
+      = f.input :county, collection: @county_options, prompt: "Select County"
+      = f.input :diocese, collection: @dioceses_options, prompt: "Select Diocese"
+      = f.input :archdeaconry
+      = f.input :latitude
+      = f.input :longitude
+      = f.button :submit, 'Add Church', class:"btn btn-success"

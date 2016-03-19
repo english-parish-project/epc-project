@@ -17,9 +17,9 @@ gem 'puma'
 gem 'rails_admin'
 gem 'devise'
 gem 'haml'
-gem 'simple_form'
 gem 'bootstrap-sass'
-gem "twitter-bootstrap-rails"
+gem 'simple_form'
+# gem "twitter-bootstrap-rails"
 
 gem 'pry-rails'
 
