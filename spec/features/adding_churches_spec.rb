@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'add church' do
-  context 'no churches have been added' do
-    scenario 'should display a prompt to add a church' do
+feature 'adding a church' do
+  context 'when there are no churches' do
+    scenario 'prompts user to add a church' do
       visit '/churches'
       expect(page).to have_link 'Add A Church'
     end
