@@ -11,17 +11,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319190414) do
+ActiveRecord::Schema.define(version: 20160320002322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "alters", force: :cascade do |t|
+    t.boolean  "medieval_alter"
+    t.string   "date"
+    t.boolean  "date_secured"
+    t.text     "date_information"
+    t.text     "location"
+    t.integer  "fabric_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "alters", ["fabric_id"], name: "index_alters_on_fabric_id", using: :btree
+
+  create_table "chancels", force: :cascade do |t|
+    t.string   "date"
+    t.boolean  "date_secured"
+    t.text     "date_information"
+    t.string   "chancel_arch_describtion"
+    t.integer  "fabric_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "chancels", ["fabric_id"], name: "index_chancels_on_fabric_id", using: :btree
+
+  create_table "chantry_chapels", force: :cascade do |t|
+    t.string   "date"
+    t.boolean  "date_secured"
+    t.text     "date_information"
+    t.string   "location"
+    t.string   "funded_by"
+    t.text     "comments"
+    t.integer  "fabric_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "chantry_chapels", ["fabric_id"], name: "index_chantry_chapels_on_fabric_id", using: :btree
 
   create_table "churches", force: :cascade do |t|
     t.text     "name"
     t.string   "date_first_mention_in_text"
     t.text     "first_mention_description"
     t.string   "date_earliest_extant_fabric"
-    t.boolean  "description_earliest_extant_fabric"
+    t.boolean  "date_secured_earliest_extant_fabric"
     t.text     "earliest_extant_fabric_description"
     t.text     "town"
     t.string   "buildings_of_england_volume"
@@ -31,8 +70,129 @@ ActiveRecord::Schema.define(version: 20160319190414) do
     t.float    "latitude"
     t.float    "longitude"
     t.text     "general_narrative"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
+  create_table "doors", force: :cascade do |t|
+    t.text     "location"
+    t.boolean  "original"
+    t.text     "comments"
+    t.integer  "fabric_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "doors", ["fabric_id"], name: "index_doors_on_fabric_id", using: :btree
+
+  create_table "fabrics", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "church_id"
+  end
+
+  add_index "fabrics", ["church_id"], name: "index_fabrics_on_church_id", using: :btree
+
+  create_table "lady_chapels", force: :cascade do |t|
+    t.string   "date"
+    t.boolean  "date_secured"
+    t.text     "date_information"
+    t.string   "location"
+    t.text     "comments"
+    t.integer  "fabric_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "lady_chapels", ["fabric_id"], name: "index_lady_chapels_on_fabric_id", using: :btree
+
+  create_table "naves", force: :cascade do |t|
+    t.string   "date"
+    t.boolean  "date_secured"
+    t.text     "date_information"
+    t.integer  "fabric_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "naves", ["fabric_id"], name: "index_naves_on_fabric_id", using: :btree
+
+  create_table "piscinas", force: :cascade do |t|
+    t.string   "date"
+    t.boolean  "date_secured"
+    t.text     "comments"
+    t.integer  "fabric_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "piscinas", ["fabric_id"], name: "index_piscinas_on_fabric_id", using: :btree
+
+  create_table "porches", force: :cascade do |t|
+    t.text     "location"
+    t.string   "date"
+    t.boolean  "valuting"
+    t.string   "valuting_type"
+    t.text     "comments"
+    t.integer  "fabric_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "porches", ["fabric_id"], name: "index_porches_on_fabric_id", using: :btree
+
+  create_table "screens", force: :cascade do |t|
+    t.string   "date"
+    t.boolean  "date_secured"
+    t.text     "comments"
+    t.integer  "fabric_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "screens", ["fabric_id"], name: "index_screens_on_fabric_id", using: :btree
+
+  create_table "sedilia", force: :cascade do |t|
+    t.string   "date"
+    t.boolean  "date_secured"
+    t.text     "date_information"
+    t.integer  "fabric_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "sedilia", ["fabric_id"], name: "index_sedilia_on_fabric_id", using: :btree
+
+  create_table "styles", force: :cascade do |t|
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "towers", force: :cascade do |t|
+    t.string   "date"
+    t.boolean  "date_secured"
+    t.string   "location"
+    t.text     "comments"
+    t.integer  "fabric_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "towers", ["fabric_id"], name: "index_towers_on_fabric_id", using: :btree
+
+  create_table "transepts", force: :cascade do |t|
+    t.boolean  "south_side"
+    t.string   "south_side_date"
+    t.boolean  "aisled"
+    t.boolean  "north_side"
+    t.string   "north_side_date"
+    t.integer  "fabric_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "transepts", ["fabric_id"], name: "index_transepts_on_fabric_id", using: :btree
+
+  add_foreign_key "fabrics", "churches"
 end

@@ -5,7 +5,7 @@ class CreateChurches < ActiveRecord::Migration
       t.string :date_first_mention_in_text
       t.text :first_mention_description
       t.string :date_earliest_extant_fabric
-      t.boolean :description_earliest_extant_fabric
+      t.boolean :date_secured_earliest_extant_fabric
       t.text :earliest_extant_fabric_description
       t.text :town
       t.string :buildings_of_england_volume
