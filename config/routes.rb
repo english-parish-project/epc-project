@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   
   root 'churches#index'
  
-  resources :churches
+  resources :churches do
+    resources :fabrics
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

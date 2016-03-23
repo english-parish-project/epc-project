@@ -1,0 +1,10 @@
+.container
+  .col-xs-12
+    = form_for [@church, @fabric] do |f|
+      = f.simple_fields_for :nave do |nave_form|
+        = nave_form.input :date, collection: @date_ranges, prompt: "Select Date"
+        .checkbox
+          = nave_form.input :date_secured, label: 'Date Secured?', as: :boolean
+        = nave_form.input :date_information
+      .btn
+        = f.button :submit
