@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160320002322) do
+ActiveRecord::Schema.define(version: 20160323220828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20160320002322) do
     t.string   "date_first_mention_in_text"
     t.text     "first_mention_description"
     t.string   "date_earliest_extant_fabric"
-    t.boolean  "date_secured_earliest_extant_fabric"
+    t.boolean  "earliest_extant_fabric_date_secured"
     t.text     "earliest_extant_fabric_description"
     t.text     "town"
     t.string   "buildings_of_england_volume"
