@@ -2,6 +2,6 @@
   .label.label-success Churches:
 - if @churches.any?
   - @churches.each do |church|
-    %p= link_to church.name, church_path(church)
+    %p= link_to church.name.capitalize, church_path(church)
 - else 
   No churches have been added yet!

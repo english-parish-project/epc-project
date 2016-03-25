@@ -43,7 +43,7 @@ feature 'adding a church' do
       end
       click_button 'submit'
       expect(current_path).to eq root_path
-      expect(page).to have_content church.name
+      expect(page).to have_content church.name.capitalize
     end
     
     scenario 'adding alter information' do
@@ -56,7 +56,7 @@ feature 'adding a church' do
         fill_in 'Location', with: "Quisque velit nisi."
       end
       click_button 'submit'
-      expect(page).to have_content church.name
+      expect(page).to have_content church.name.capitalize
     end
   end
 end
