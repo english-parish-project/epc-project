@@ -1,5 +1,7 @@
 FactoryGirl.define do
-  factory :nafe, class: 'Nave' do
-    
+  factory :nave do
+    date "700-725"
+    date_secured true
+    date_information "Lorem ipsum dolor sit amet"
   end
 end

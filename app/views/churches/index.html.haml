@@ -1,3 +1,5 @@
+%h3
+  .label.label-success Churches:
 - if @churches.any?
   - @churches.each do |church|
     %p= church.name
@@ -6,5 +8,3 @@
     %p= church.county
 - else 
   No churches have been added yet!
-
-=link_to  "Add A Church", new_church_path

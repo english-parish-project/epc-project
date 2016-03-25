@@ -36,11 +36,27 @@ feature 'adding a church' do
   context 'adding fabric information' do
     scenario 'addind nave' do 
       visit new_church_fabric_path(church.id)
-       select '700-725', :from => 'Date'
-       fill_in 'Date information', with: "Lorem ipsum dolor sit amet."
-       click_button 'submit'
-       expect(current_path).to eq root_path
-       expect(page).to have_content church.name
+      within('.nave') do
+        select '700-725', :from => 'Date'
+        find("#fabric_nave_attributes_date_secured").set(true) 
+        fill_in 'Date information', with: "Lorem ipsum dolor sit amet."
+      end
+      click_button 'submit'
+      expect(current_path).to eq root_path
+      expect(page).to have_content church.name
+    end
+    
+    scenario 'adding alter information' do
+      visit new_church_fabric_path(church.id)
+      fill_nave_information
+      within('.alter') do
+        find("#fabric_alter_attributes_medieval_alter").set(true) 
+        select '700-725', :from => 'Date'
+        fill_in 'Date information', with: "Lorem ipsum dolor sit amet."
+        fill_in 'Location', with: "Quisque velit nisi."
+      end
+      click_button 'submit'
+      expect(page).to have_content church.name
     end
   end
 end

@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title Instaz
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    
+  %body
+    %header 
+      .title=link_to "English Parish Church Project", root_path
+      %nav.navbar.navbar-default.navbar-static-top
+        .navbar-btn.btn.btn-default.upload-btn=link_to  "Add A Church", new_church_path
+    %div.container
+      = render 'layouts/messages'
+      = yield

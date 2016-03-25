@@ -2,9 +2,19 @@
   .col-xs-12
     = form_for [@church, @fabric] do |f|
       = f.simple_fields_for :nave do |nave_form|
-        = nave_form.input :date, collection: @date_ranges, prompt: "Select Date"
-        .checkbox
-          = nave_form.input :date_secured, label: 'Date Secured?', as: :boolean
-        = nave_form.input :date_information
+        .nave
+          = nave_form.input :date, collection: @date_ranges, prompt: "Select Date"
+          .checkbox
+            = nave_form.input :date_secured, label: 'Date Secured?', as: :boolean
+          = nave_form.input :date_information
+      = f.simple_fields_for :alter do |alter_form|
+        .alter
+          .checkbox#medieval_alter
+            = alter_form.input :medieval_alter, ladel: 'Medieval Alter?', as: :boolean
+          = alter_form.input :date, collection: @date_ranges, prompt: "Select Date"
+          .checkbox
+            = alter_form.input :date_secured, label: 'Date Secured?', as: :boolean
+          = alter_form.input :date_information
+          = alter_form.input :location
       .btn
         = f.button :submit

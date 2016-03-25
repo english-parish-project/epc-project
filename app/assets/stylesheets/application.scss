@@ -12,5 +12,31 @@
  *
  */
 
-@import "bootstrap-sprockets"
-@import "bootstrap"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "churches";
+@import "fabric";
+@import "custom";
+
+a {
+  color: red;
+  text-decoration: none;
+} 
+.navbar-btn {
+  display:inline-block;
+  margin-left:10px;
+  float: right;
+}
+
+.upload-btn {
+  display:inline-block;
+  margin-left:10px;
+  float: left;
+}
+
+header .title a{
+  color: purple;
+  text-align: center;
+  display: block;
+  font-size: 42px;
+}
