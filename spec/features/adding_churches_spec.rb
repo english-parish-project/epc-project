@@ -5,7 +5,7 @@ feature 'adding a church' do
   
   context 'when there are no churches' do
     scenario 'prompts user to add a church' do
-      visit '/churches'
+      visit root_path
       expect(page).to have_link 'Add A Church'
     end
   end
