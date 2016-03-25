@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 feature 'adding a church' do
+  let (:church) {create(:church) }
+  
   context 'when there are no churches' do
     scenario 'prompts user to add a church' do
       visit '/churches'
@@ -8,7 +10,7 @@ feature 'adding a church' do
     end
   end
   
-  context 'adding church information' do
+  context 'adding initial church information' do
     scenario 'prompts user to fill out a form' do
      visit root_path
      click_link 'Add A Church'
@@ -26,9 +28,19 @@ feature 'adding a church' do
      fill_in "Archdeaconry", with: "York"
      fill_in "Longitude", with: "50.1"
      fill_in "Latitude", with: "50.2"
-     click_button 'Add Church'
-     expect(current_path).to eq root_path
-     expect(page).to have_content("Church 1 700-725 Town Suffolk")
+     click_button 'Save/Next-Add Fabric'
+     expect(current_path).to eq new_church_fabric_path(Church.find_by(name: 'Church 1').id)
+    end
+  end
+  
+  context 'adding fabric information' do
+    scenario 'addind nave' do 
+      visit new_church_fabric_path(church.id)
+       select '700-725', :from => 'Date'
+       fill_in 'Date information', with: "Lorem ipsum dolor sit amet."
+       click_button 'submit'
+       expect(current_path).to eq root_path
+       expect(page).to have_content church.name
     end
   end
 end

@@ -6,7 +6,7 @@
       = f.input :first_mention_description
       = f.input :date_earliest_extant_fabric, collection: @date_ranges, prompt: "Select Date"
       .checkbox
-        = f.input :earliest_extant_fabric_date_secured, label: 'Date Secured?', as: :boolean
+        = f.input :date_earliest_extant_fabric_secured, label: 'Date Secured?', as: :boolean
       = f.input :earliest_extant_fabric_description
       = f.input :general_narrative
       = f.input :town
