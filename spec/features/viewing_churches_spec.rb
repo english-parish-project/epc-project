@@ -2,6 +2,7 @@ require 'rails_helper'
 
 feature 'viewing churches' do 
   let!(:church) { create(:church) }
+  let!(:nave) { create(:fabric_with_nave, church_id: church.id) }
   
   context 'added by others' do 
     scenario 'initial information' do
@@ -21,6 +22,14 @@ feature 'viewing churches' do
         church.diocese
         church.archdeaconry
         church.longitude
+    end
+    
+    scenario 'nave information' do
+      visit church_path(church.id)
+      expect(page).to have_content 
+        church.fabric.nave.date
+        church.fabric.nave.date_secured
+        church.fabric.nave.date_information
     end
   end
 end

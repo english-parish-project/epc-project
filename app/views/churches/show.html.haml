@@ -48,4 +48,20 @@ Longitude:
 latitude:
 = @church.latitude
 
+%h2= @church.name + "Fabric"
+%h3 Nave
+
+%div
+Date:
+= @church.fabric.nave.date
+
+%div
+Date Secured? 
+= @church.fabric.nave.date_secured
+
+%div
+Information on Date:
+= @church.fabric.nave.date_information
+   
+  
   
