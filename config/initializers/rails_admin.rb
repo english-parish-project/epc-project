@@ -4,7 +4,7 @@ RailsAdmin.config do |config|
 
   config.authenticate_with do
      authenticate_or_request_with_http_basic('Admin Only Access') do |username, password|
-       username == 'ZtoM' && password == ENV['RAILS_ADMIN']
+       username == 'ZtoM' && password == 'epcprojectmz'
      end
    end
 
