@@ -15,13 +15,16 @@ gem 'rails_12factor', group: :production
 gem 'puma'
 
 gem 'rails_admin'
-gem 'devise'
 gem 'haml'
 gem 'bootstrap-sass'
 gem 'simple_form'
 # gem "twitter-bootstrap-rails"
 
 gem 'pry-rails'
+
+gem 'devise'
+gem 'cancancan'
+gem 'rolify'
 
 group :development, :test do
  gem 'rspec-rails'

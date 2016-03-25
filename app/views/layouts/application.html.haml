@@ -11,6 +11,12 @@
       .title=link_to "English Parish Church Project", root_path
       %nav.navbar.navbar-default.navbar-static-top
         .navbar-btn.btn.btn-default.upload-btn=link_to  "Add A Church", new_church_path
+        .container-fluid
+          - if user_signed_in?
+            .navbar-btn.btn.btn-default= link_to "Sign out", destroy_user_session_path, method: :delete
+          - else
+            %div.navbar-btn.btn.btn-default= link_to "Sign in", new_user_session_path
+            %div.navbar-btn.btn.btn-default= link_to "Sign up", new_user_registration_path
     %div.container
       = render 'layouts/messages'
       = yield
