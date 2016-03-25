@@ -1,6 +1,8 @@
 .container
   .col-xs-12
     = form_for [@church, @fabric] do |f|
+      %h4
+        .label.label-warning Add Nave Information:
       = f.simple_fields_for :nave do |nave_form|
         .nave
           = nave_form.input :date, collection: @date_ranges, prompt: "Select Date"
@@ -8,6 +10,8 @@
             = nave_form.input :date_secured, label: 'Date Secured?', as: :boolean
           = nave_form.input :date_information
       = f.simple_fields_for :alter do |alter_form|
+        %h4
+          .label.label-warning Add Alter Information:
         .alter
           .checkbox#medieval_alter
             = alter_form.input :medieval_alter, ladel: 'Medieval Alter?', as: :boolean
@@ -16,5 +20,4 @@
             = alter_form.input :date_secured, label: 'Date Secured?', as: :boolean
           = alter_form.input :date_information
           = alter_form.input :location
-      .btn
-        = f.button :submit
+        = f.button("submit", class: "btn btn-primary")
