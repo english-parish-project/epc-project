@@ -1,0 +1,91 @@
+%h1= @church.name.capitalize
+
+%div
+Date First Mentioned in Text:
+= @church.date_first_mention_in_text
+
+%div
+First Mentioned Description: 
+= @church.first_mention_description
+
+%div
+Earliest Extant Fabric Date:
+= @church.date_earliest_extant_fabric
+
+%div
+Date Secured: 
+= @church.date_earliest_extant_fabric_secured
+
+%div
+Earliest Extant Fabrtic Desrcription:
+= @church.earliest_extant_fabric_description
+
+%div
+Town:
+= @church.town
+
+%div
+Building of England Volume:
+= @church.buildings_of_england_volume
+
+%div
+County:
+= @church.county
+
+%div
+Diocese:
+= @church.diocese
+
+%div
+Archdeaconry:
+= @church.archdeaconry
+
+%div
+Longitude:
+= @church.longitude
+
+%div
+latitude:
+= @church.latitude
+
+- if @church.fabric.nave.present?
+  %h2= @church.name.capitalize + " Fabric"
+  %h3 Nave
+
+  %div
+  Date:
+  = @church.fabric.nave.date
+
+  %div
+  Date Secured? 
+  = @church.fabric.nave.date_secured
+
+  %div
+  Information on Date:
+  = @church.fabric.nave.date_information
+   
+- if @church.fabric.alter.present?
+  %h3 Alter
+
+  %div
+  Medival Alter?
+  = @church.fabric.alter.medieval_alter
+
+  %div
+  Date:
+  = @church.fabric.alter.date
+
+  %div
+  Date Secured? 
+  = @church.fabric.alter.date_secured
+
+  %div
+  Information on Date:
+  = @church.fabric.alter.date_information
+    
+  %div
+  Location:
+  = @church.fabric.alter.location
+   
+  
+  

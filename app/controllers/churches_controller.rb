@@ -16,6 +16,10 @@ class ChurchesController < ApplicationController
     redirect_to new_church_fabric_path(@church.id)
   end
   
+  def show
+    @church = Church.find(params[:id])
+  end
+  
   def church_params
     params.require(:church).permit(:name, :date_first_mention_in_text, :first_mention_description, :date_earliest_extant_fabric, :date_earliest_extant_fabric_secured, :earliest_extant_fabric_description, :general_narrative, :town, :buildings_of_england_volume, :county, :diocese, :archdeaconry, :latitude, :longitude)
   end

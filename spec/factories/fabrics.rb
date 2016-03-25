@@ -4,5 +4,11 @@ FactoryGirl.define do
       association :church
       association :nave
     end
+    
+    factory :fabric_with_all_info do
+      association :church
+      association :nave
+      association :alter
+    end
   end
 end
