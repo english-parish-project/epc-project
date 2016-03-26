@@ -9,6 +9,7 @@ FactoryGirl.define do
       association :church
       association :nave
       association :alter
+      association :chancel
     end
   end
 end

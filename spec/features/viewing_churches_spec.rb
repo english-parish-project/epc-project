@@ -31,6 +31,7 @@ feature 'viewing churches' do
         church.fabric.nave.date_secured
         church.fabric.nave.date_information
     end
+    
     scenario 'alter information' do
       visit church_path(church.id)
       expect(page).to have_content 
@@ -39,6 +40,15 @@ feature 'viewing churches' do
         church.fabric.alter.date_secured
         church.fabric.alter.date_information
         church.fabric.alter.location
+    end
+    
+    scenario 'chancel information' do
+      visit church_path(church.id)
+      expect(page).to have_content 
+        church.fabric.chancel.date
+        church.fabric.chancel.date_secured
+        church.fabric.chancel.date_information
+        church.fabric.chancel.chancel_arch_description
     end
   end
 end

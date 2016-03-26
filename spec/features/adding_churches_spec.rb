@@ -58,5 +58,18 @@ feature 'adding a church' do
       click_button 'submit'
       expect(page).to have_content church.name.capitalize
     end
+    
+    scenario 'adding chancel information' do
+      visit new_church_fabric_path(church.id)
+      fill_nave_information
+      fill_alter_information
+      within('.chancel') do
+        select '700-725', :from => 'Date'
+        fill_in 'Date information', with: "Lorem ipsum dolor sit amet."
+        fill_in 'Chancel arch description', with: "Quisque velit nisi."
+      end
+      click_button 'submit'
+      expect(page).to have_content church.name.capitalize
+    end
   end
 end

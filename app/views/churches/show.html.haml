@@ -86,6 +86,25 @@ latitude:
   %div
   Location:
   = @church.fabric.alter.location
+
+- if @church.fabric.chancel.present?
+  %h3 Chancel
+  
+  %div
+  Date:
+  = @church.fabric.chancel.date
+
+  %div
+  Date Secured? 
+  = @church.fabric.chancel.date_secured
+
+  %div
+  Information on Date:
+  = @church.fabric.chancel.date_information
+    
+  %div
+  Location:
+  = @church.fabric.chancel.chancel_arch_description
    
   
   

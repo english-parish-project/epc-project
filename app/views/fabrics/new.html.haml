@@ -20,4 +20,13 @@
             = alter_form.input :date_secured, label: 'Date Secured?', as: :boolean
           = alter_form.input :date_information
           = alter_form.input :location
+        = f.simple_fields_for :chancel do |chancel_form|
+          %h4
+            .label.label-warning Add Chancel Information:
+          .chancel
+            = chancel_form.input :date, collection: @date_ranges, prompt: "Select Date"
+            .checkbox
+              = chancel_form.input :date_secured, label: 'Date Secured?', as: :boolean
+            = chancel_form.input :date_information
+            = chancel_form.input :chancel_arch_description
         = f.button("submit", class: "btn btn-primary")
