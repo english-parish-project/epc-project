@@ -297,6 +297,7 @@ DEPENDENCIES
   shoulda-callback-matchers
   shoulda-matchers
   simple_form
+  simplecov
   spring
   turbolinks
   uglifier (>= 1.3.0)
