@@ -6,6 +6,7 @@ class CreateLadyChapels < ActiveRecord::Migration
       t.text :date_information
       t.string :location
       t.text :comments
+      t.string :style
       
       t.belongs_to :fabric, index: true
       t.timestamps null: false

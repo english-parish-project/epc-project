@@ -7,7 +7,8 @@ class CreateTransepts < ActiveRecord::Migration
       t.boolean :north_side
       t.string :north_side_date
       t.boolean :aisled
-      
+      t.string :style
+       
       t.belongs_to :fabric, index: true
       t.timestamps null: false
     end

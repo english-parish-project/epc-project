@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160325105644) do
+ActiveRecord::Schema.define(version: 20160319234243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160325105644) do
     t.boolean  "date_secured"
     t.text     "date_information"
     t.text     "location"
+    t.string   "style"
     t.integer  "fabric_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160325105644) do
     t.boolean  "date_secured"
     t.text     "date_information"
     t.text     "chancel_arch_description"
+    t.string   "style"
     t.integer  "fabric_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
@@ -48,6 +50,7 @@ ActiveRecord::Schema.define(version: 20160325105644) do
     t.string   "location"
     t.string   "funded_by"
     t.text     "comments"
+    t.string   "style"
     t.integer  "fabric_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -61,8 +64,9 @@ ActiveRecord::Schema.define(version: 20160325105644) do
     t.text     "first_mention_description"
     t.string   "date_earliest_extant_fabric"
     t.boolean  "date_earliest_extant_fabric_secured"
+    t.string   "location_of_earliest_extant_fabric"
     t.text     "earliest_extant_fabric_description"
-    t.text     "town"
+    t.string   "town"
     t.string   "buildings_of_england_volume"
     t.string   "county"
     t.string   "diocese"
@@ -78,6 +82,7 @@ ActiveRecord::Schema.define(version: 20160325105644) do
     t.text     "location"
     t.boolean  "original"
     t.text     "comments"
+    t.string   "style"
     t.integer  "fabric_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -86,6 +91,7 @@ ActiveRecord::Schema.define(version: 20160325105644) do
   add_index "doors", ["fabric_id"], name: "index_doors_on_fabric_id", using: :btree
 
   create_table "fabrics", force: :cascade do |t|
+    t.string   "style"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "church_id"
@@ -99,6 +105,7 @@ ActiveRecord::Schema.define(version: 20160325105644) do
     t.text     "date_information"
     t.string   "location"
     t.text     "comments"
+    t.string   "style"
     t.integer  "fabric_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -110,6 +117,7 @@ ActiveRecord::Schema.define(version: 20160325105644) do
     t.string   "date"
     t.boolean  "date_secured"
     t.text     "date_information"
+    t.string   "style"
     t.integer  "fabric_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -121,6 +129,7 @@ ActiveRecord::Schema.define(version: 20160325105644) do
     t.string   "date"
     t.boolean  "date_secured"
     t.text     "comments"
+    t.string   "style"
     t.integer  "fabric_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
@@ -134,6 +143,7 @@ ActiveRecord::Schema.define(version: 20160325105644) do
     t.boolean  "valuting"
     t.string   "valuting_type"
     t.text     "comments"
+    t.string   "style"
     t.integer  "fabric_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -145,6 +155,7 @@ ActiveRecord::Schema.define(version: 20160325105644) do
     t.string   "date"
     t.boolean  "date_secured"
     t.text     "comments"
+    t.string   "style"
     t.integer  "fabric_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
@@ -156,6 +167,7 @@ ActiveRecord::Schema.define(version: 20160325105644) do
     t.string   "date"
     t.boolean  "date_secured"
     t.text     "date_information"
+    t.string   "style"
     t.integer  "fabric_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -163,17 +175,12 @@ ActiveRecord::Schema.define(version: 20160325105644) do
 
   add_index "sedilia", ["fabric_id"], name: "index_sedilia_on_fabric_id", using: :btree
 
-  create_table "styles", force: :cascade do |t|
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "towers", force: :cascade do |t|
     t.string   "date"
     t.boolean  "date_secured"
     t.string   "location"
     t.text     "comments"
+    t.string   "style"
     t.integer  "fabric_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
@@ -187,6 +194,7 @@ ActiveRecord::Schema.define(version: 20160325105644) do
     t.boolean  "aisled"
     t.boolean  "north_side"
     t.string   "north_side_date"
+    t.string   "style"
     t.integer  "fabric_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
@@ -194,5 +202,4 @@ ActiveRecord::Schema.define(version: 20160325105644) do
 
   add_index "transepts", ["fabric_id"], name: "index_transepts_on_fabric_id", using: :btree
 
-  add_foreign_key "fabrics", "churches"
 end

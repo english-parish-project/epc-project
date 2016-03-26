@@ -7,6 +7,7 @@ class CreateChantryChapels < ActiveRecord::Migration
       t.string :location
       t.string :funded_by
       t.text :comments
+      t.string :style
       
       t.belongs_to :fabric, index: true
       t.timestamps null: false

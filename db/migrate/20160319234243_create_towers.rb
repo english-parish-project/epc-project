@@ -5,6 +5,7 @@ class CreateTowers < ActiveRecord::Migration
       t.boolean :date_secured
       t.string :location
       t.text :comments
+      t.string :style
       
       t.belongs_to :fabric, index: true
       t.timestamps null: false
