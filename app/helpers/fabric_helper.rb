@@ -39,4 +39,10 @@ module FabricHelper
     "1576-1599",
     "Post 1600"]
   end
+  
+  def self.build_fabric_information(fabric)
+    fabric.build_nave
+    fabric.build_chancel
+    fabric.build_alter
+  end
 end

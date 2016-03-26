@@ -3,9 +3,7 @@ class FabricsController < ApplicationController
   def new
     @church = Church.find(params[:church_id])
     @fabric = Fabric.new
-    @fabric.build_nave
-    @fabric.build_chancel
-    @fabric.build_alter
+    FabricHelper.build_fabric_information(@fabric)
     @date_ranges = FabricHelper.date_ranges
   end
   
