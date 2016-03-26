@@ -31,6 +31,7 @@ feature 'viewing churches' do
         church.fabric.nave.date_secured
         church.fabric.nave.date_information
     end
+    
     scenario 'alter information' do
       visit church_path(church.id)
       expect(page).to have_content 
