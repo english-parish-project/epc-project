@@ -40,6 +40,7 @@ group :development, :test do
  gem 'shoulda-callback-matchers'
  gem 'awesome_print', require:'ap'
  gem 'dotenv-rails'
+ gem 'simplecov', :require => false
 end
 
 group :development do
