@@ -5,6 +5,7 @@ class FabricsController < ApplicationController
     @fabric = Fabric.new
     FabricHelper.build_fabric_information(@fabric)
     @date_ranges = FabricHelper.date_ranges
+    @styles_collection = FabricHelper.styles_collection
   end
   
   def create
@@ -16,6 +17,6 @@ class FabricsController < ApplicationController
   private 
   
   def fabric_params
-    params.require(:fabric).permit(nave_attributes: [:id, :date, :date_secured, :date_information], alter_attributes: [:id, :date, :date_secured, :date_information, :location, :medieval_alter], chancel_attributes: [:id, :id, :date, :date_secured, :date_information, :chancel_arch_description ])
+    params.require(:fabric).permit(nave_attributes: [:id, :date, :date_secured, :date_information, styles:[]], alter_attributes: [:id, :date, :date_secured, :date_information, :location, :medieval_alter], chancel_attributes: [:id, :date, :date_secured, :date_information, :chancel_arch_description ], styles:[])
   end 
 end

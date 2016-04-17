@@ -1,10 +1,18 @@
 .container
   .col-xs-12
     = form_for [@church, @fabric] do |f|
+      %strong Select Style(s):
+      =f.collection_check_boxes(:styles, Style.all, :name, :name, include_hidden: false) do |style|
+        .checkbox-inline
+          = style.check_box + style.text
       %h4
         .label.label-warning Add Nave Information:
       = f.simple_fields_for :nave do |nave_form|
         .nave
+          %strong Select Style(s):
+          = nave_form.collection_check_boxes(:styles, Style.all, :name, :name, include_hidden: false) do |style|
+            .checkbox-inline
+              = style.check_box + style.text
           = nave_form.input :date, collection: @date_ranges, prompt: "Select Date"
           .checkbox
             = nave_form.input :date_secured, label: 'Date Secured?', as: :boolean

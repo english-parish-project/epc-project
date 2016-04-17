@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319234243) do
+ActiveRecord::Schema.define(version: 20160417154510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,10 @@ ActiveRecord::Schema.define(version: 20160319234243) do
     t.float    "latitude"
     t.float    "longitude"
     t.text     "general_narrative"
+    t.boolean  "minster_status"
+    t.date     "minster_end_date"
+    t.boolean  "collegiate_status"
+    t.date     "collegiate_start_date"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
@@ -91,9 +95,9 @@ ActiveRecord::Schema.define(version: 20160319234243) do
   add_index "doors", ["fabric_id"], name: "index_doors_on_fabric_id", using: :btree
 
   create_table "fabrics", force: :cascade do |t|
-    t.string   "style"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "styles",     default: [],              array: true
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "church_id"
   end
 
@@ -117,10 +121,10 @@ ActiveRecord::Schema.define(version: 20160319234243) do
     t.string   "date"
     t.boolean  "date_secured"
     t.text     "date_information"
-    t.string   "style"
+    t.string   "styles",           default: [],              array: true
     t.integer  "fabric_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   add_index "naves", ["fabric_id"], name: "index_naves_on_fabric_id", using: :btree
@@ -174,6 +178,12 @@ ActiveRecord::Schema.define(version: 20160319234243) do
   end
 
   add_index "sedilia", ["fabric_id"], name: "index_sedilia_on_fabric_id", using: :btree
+
+  create_table "styles", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "towers", force: :cascade do |t|
     t.string   "date"
