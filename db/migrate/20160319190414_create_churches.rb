@@ -16,6 +16,10 @@ class CreateChurches < ActiveRecord::Migration
       t.float :latitude
       t.float :longitude
       t.text :general_narrative
+      t.boolean :minster_status
+      t.date :minster_end_date
+      t.boolean :collegiate_status
+      t.date :collegiate_start_date
 
       t.timestamps null: false
     end
