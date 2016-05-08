@@ -9,18 +9,14 @@
       = f.input :archdeaconry
       = f.input :latitude
       = f.input :longitude
-      .checkbox
-        = f.input :minster_status
-      .check_box
-        = f.input :minster_current_status
-      .check_box
-        = f.input :collegiate_status
+      = f.input :minster_status, as: :select
+      = f.input :minster_current_status, as: :select
+      = f.input :collegiate_status, as: :select
       = f.input :collegiate_date
       = f.input :first_mentioned_in_text
       = f.input :first_mentioned_in_text_information
       = f.input :earliest_extant_fabric_date, collection: @date_ranges, prompt: "Select Date"
-      .checkbox
-        = f.input :earliest_extant_fabric_date_secured, label: 'Date Secured?', as: :boolean
+      = f.input :earliest_extant_fabric_date_secured, label: 'Date Secured?', as: :select
       = f.input :earliest_extant_fabric_date_information
       = f.input :earliest_extant_fabric_location
       = f.input :general_notes

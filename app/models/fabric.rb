@@ -1,12 +1,12 @@
 class Fabric < ActiveRecord::Base
   has_one :nave
-  accepts_nested_attributes_for :nave
+  accepts_nested_attributes_for :nave, reject_if: :all_blank
   
   has_one :chancel
-  accepts_nested_attributes_for :chancel
+  accepts_nested_attributes_for :chancel, reject_if: :all_blank
   
   has_one :alter
-  accepts_nested_attributes_for :alter
+  accepts_nested_attributes_for :alter, reject_if: :all_blank
   
   has_one :sedilia
   accepts_nested_attributes_for :sedilia
