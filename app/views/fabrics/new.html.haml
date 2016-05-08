@@ -5,20 +5,10 @@
       =f.collection_check_boxes(:styles, Style.all, :name, :name, include_hidden: false) do |style|
         .checkbox-inline
           = style.check_box + style.text
-    
-      = f.simple_fields_for :nave do |nave_form|
-        %h4
-          .label.label-warning Add Nave Information:
-        .nave
-          %strong Select Style(s):
-          = nave_form.collection_check_boxes(:styles, Style.all, :name, :name, include_hidden: false) do |style|
-            .checkbox-inline
-              = style.check_box + style.text
-          = nave_form.input :date, collection: @date_ranges, prompt: "Select Date"
-          = nave_form.input :date_secured, label: 'Date Secured?', as: :select
-          = nave_form.input :date_information
-          = nave_form.input :general_notes
       
+      = f.simple_fields_for :nave do |nave_form|
+        = render partial: "naves/form", locals: {nave_form: nave_form}
+
       = f.simple_fields_for :alter do |alter_form|
         %h4
           .label.label-warning Add Alter Information:
