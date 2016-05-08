@@ -21,6 +21,6 @@ class ChurchesController < ApplicationController
   end
   
   def church_params
-    params.require(:church).permit(:name, :date_first_mention_in_text, :first_mention_description, :date_earliest_extant_fabric, :date_earliest_extant_fabric_secured, :earliest_extant_fabric_description, :general_narrative, :town, :buildings_of_england_volume, :county, :diocese, :archdeaconry, :latitude, :longitude)
+    params.require(:church).permit(:name, :first_mentioned_in_text, :first_mentioned_in_text_information, :earliest_extant_fabric_date, :earliest_extant_fabric_date_secured, :earliest_extant_fabric_date_information, :earliest_extant_fabric_location, :general_notes, :town, :buildings_of_england_volume, :county, :diocese, :archdeaconry, :latitude, :longitude, :minster_status, :minster_current_status, :collegiate_status, :collegiate_date)
   end
 end
