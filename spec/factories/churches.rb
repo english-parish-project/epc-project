@@ -1,17 +1,23 @@
 FactoryGirl.define do
   factory :church do  
     name 'Test Church'
-    date_first_mention_in_text "700-725"
-    first_mention_description "Lorem ipsum dolor sit amet"
-    date_earliest_extant_fabric "700-725"
-    date_earliest_extant_fabric_secured true
-    earliest_extant_fabric_description "Lorem ipsum dolor sit amet, fabellas gubergren maiestatis eos no."
     town "Test Town"
-    buildings_of_england_volume "Suffolk"
     county "Suffolk"
+    buildings_of_england_volume "Suffolk"
     diocese "Norwich"
     archdeaconry "York"
     longitude "50.1"
     latitude "50.2"
+    minster_status true
+    minster_current_status false
+    collegiate_status true
+    collegiate_date 900
+    first_mentioned_in_text 850
+    first_mentioned_in_text_information "Lorem ipsum dolor sit amet"
+    earliest_extant_fabric_date "700-725"
+    earliest_extant_fabric_date_secured true
+    earliest_extant_fabric_date_information "Lorem ipsum dolor sit amet"
+    earliest_extant_fabric_location "Mauris blandit aliquet elit, eget tincidunt"
+    general_notes "Vivamus suscipit tortor eget felis porttitor volutpat."
   end
 end

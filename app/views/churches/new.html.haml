@@ -2,13 +2,6 @@
   .col-xs-12
     = simple_form_for @church do |f|
       = f.input :name
-      = f.input :date_first_mention_in_text, collection: @date_ranges, prompt: "Select Date"
-      = f.input :first_mention_description
-      = f.input :date_earliest_extant_fabric, collection: @date_ranges, prompt: "Select Date"
-      .checkbox
-        = f.input :date_earliest_extant_fabric_secured, label: 'Date Secured?', as: :boolean
-      = f.input :earliest_extant_fabric_description
-      = f.input :general_narrative
       = f.input :town
       = f.input :buildings_of_england_volume, collection: @volume_options, prompt: "Select Buildings of England Volume"
       = f.input :county, collection: @county_options, prompt: "Select County"
@@ -16,4 +9,16 @@
       = f.input :archdeaconry
       = f.input :latitude
       = f.input :longitude
+      = f.input :minster_status, as: :select
+      = f.input :minster_current_status, as: :select
+      = f.input :collegiate_status, as: :select
+      = f.input :collegiate_date
+      = f.input :first_mentioned_in_text
+      = f.input :first_mentioned_in_text_information
+      = f.input :earliest_extant_fabric_date, collection: @date_ranges, prompt: "Select Date"
+      = f.input :earliest_extant_fabric_date_secured, label: 'Date Secured?', as: :select
+      = f.input :earliest_extant_fabric_date_information
+      = f.input :earliest_extant_fabric_location
+      = f.input :general_notes
+    
       = f.button :submit, 'Save/Next-Add Fabric', class:"btn btn-success"

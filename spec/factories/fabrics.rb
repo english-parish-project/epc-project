@@ -6,6 +6,7 @@ FactoryGirl.define do
     end
     
     factory :fabric_with_all_info do
+      styles ["Anglo-Saxon", "Saxon-Norman Overlap"]
       association :church
       association :nave
       association :alter

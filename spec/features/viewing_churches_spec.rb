@@ -11,17 +11,22 @@ feature 'viewing churches' do
       expect(current_path).to eq church_path(church.id)
       expect(page).to have_content 
         church.name
-        church.date_first_mention_in_text
-        church.first_mention_description
-        church.date_earliest_extant_fabric
-        church.date_earliest_extant_fabric_secured
-        church.earliest_extant_fabric_description
         church.town
         church.buildings_of_england_volume
         church.county
         church.diocese
         church.archdeaconry
         church.longitude
+        church.latitude
+        church.minster_status
+        church.collegiate_status
+        church.collegiate_date
+        church.first_mentioned_in_text
+        church.first_mentioned_in_text_information
+        church.earliest_extant_fabric_date
+        church.earliest_extant_fabric_date_secured
+        church.earliest_extant_fabric_date_information
+        church.general_notes
     end
     
     scenario 'nave information' do
@@ -30,6 +35,8 @@ feature 'viewing churches' do
         church.fabric.nave.date
         church.fabric.nave.date_secured
         church.fabric.nave.date_information
+        church.fabric.nave.styles
+        church.fabric.nave.general_notes
     end
     
     scenario 'alter information' do
@@ -39,7 +46,7 @@ feature 'viewing churches' do
         church.fabric.alter.date
         church.fabric.alter.date_secured
         church.fabric.alter.date_information
-        church.fabric.alter.location
+        church.fabric.alter.location_in_chancel
     end
     
     scenario 'chancel information' do

@@ -5,8 +5,7 @@ class CreateAlters < ActiveRecord::Migration
       t.string :date
       t.boolean :date_secured
       t.text :date_information
-      t.text :location
-      t.string :style
+      t.text :location_in_chancel
        
       t.belongs_to :fabric, index: true
       t.timestamps null: false

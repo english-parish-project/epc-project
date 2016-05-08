@@ -4,9 +4,8 @@ class CreatePorches < ActiveRecord::Migration
       t.text :location
       t.string :date
       t.boolean :valuting
-      t.string :valuting_type
-      t.text :comments
-      t.string :style
+      t.text :valuting_type
+      t.text :valuting_description
        
       t.belongs_to :fabric, index: true
       t.timestamps null: false

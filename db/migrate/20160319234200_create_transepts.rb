@@ -3,11 +3,10 @@ class CreateTransepts < ActiveRecord::Migration
     create_table :transepts do |t|
       t.boolean :south_side
       t.string :south_side_date
-      t.boolean :aisled
+      t.boolean :south_side_aisled
       t.boolean :north_side
       t.string :north_side_date
-      t.boolean :aisled
-      t.string :style
+      t.boolean :north_side_aisled
        
       t.belongs_to :fabric, index: true
       t.timestamps null: false
