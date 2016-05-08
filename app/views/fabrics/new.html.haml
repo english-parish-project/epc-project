@@ -23,11 +23,9 @@
         %h4
           .label.label-warning Add Alter Information:
         .alter
-          .checkbox#medieval_alter
-            = alter_form.input :medieval_alter, ladel: 'Medieval Alter?',  as: :select
+          = alter_form.input :medieval_alter, ladel: 'Medieval Alter?',  as: :select
           = alter_form.input :date, collection: @date_ranges, prompt: "Select Date"
-          .checkbox
-            = alter_form.input :date_secured, label: 'Date Secured?',  as: :select
+          = alter_form.input :date_secured, label: 'Date Secured?',  as: :select
           = alter_form.input :date_information
           = alter_form.input :location_in_chancel
         
