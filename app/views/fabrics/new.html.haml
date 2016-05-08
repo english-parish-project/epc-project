@@ -5,18 +5,21 @@
       =f.collection_check_boxes(:styles, Style.all, :name, :name, include_hidden: false) do |style|
         .checkbox-inline
           = style.check_box + style.text
-      %h4
-        .label.label-warning Add Nave Information:
+    
       = f.simple_fields_for :nave do |nave_form|
+        %h4
+          .label.label-warning Add Nave Information:
         .nave
           %strong Select Style(s):
           = nave_form.collection_check_boxes(:styles, Style.all, :name, :name, include_hidden: false) do |style|
             .checkbox-inline
               = style.check_box + style.text
           = nave_form.input :date, collection: @date_ranges, prompt: "Select Date"
-          .checkbox
-            = nave_form.input :date_secured, label: 'Date Secured?', as: :boolean
+          .radio-inline
+            = nave_form.input :date_secured, label: 'Date Secured?', as: :radio_buttons
           = nave_form.input :date_information
+          = nave_form.input :general_notes
+      
       = f.simple_fields_for :alter do |alter_form|
         %h4
           .label.label-warning Add Alter Information:
@@ -25,9 +28,10 @@
             = alter_form.input :medieval_alter, ladel: 'Medieval Alter?', as: :boolean
           = alter_form.input :date, collection: @date_ranges, prompt: "Select Date"
           .checkbox
-            = alter_form.input :date_secured, label: 'Date Secured?', as: :boolean
+            = alter_form.input :date_secured, label: 'Date Secured?', as: :radio_buttons
           = alter_form.input :date_information
-          = alter_form.input :location
+          = alter_form.input :location_in_chancel
+        
         = f.simple_fields_for :chancel do |chancel_form|
           %h4
             .label.label-warning Add Chancel Information:
@@ -36,5 +40,8 @@
             .checkbox
               = chancel_form.input :date_secured, label: 'Date Secured?', as: :boolean
             = chancel_form.input :date_information
+            = chancel_form.collection_check_boxes(:styles, Style.all, :name, :name, include_hidden: false) do |style|
+              .checkbox-inline
+                = style.check_box + style.text
             = chancel_form.input :chancel_arch_description
         = f.button("submit", class: "btn btn-primary")

@@ -40,12 +40,6 @@ module FabricHelper
     "Post 1600"]
   end
   
-  def self.styles_collection
-    
-      { id: 1, style: "red" }
-    
-  end
-  
   def self.build_fabric_information(fabric)
     fabric.build_nave
     fabric.build_chancel

@@ -5,13 +5,16 @@ class FabricsController < ApplicationController
     @fabric = Fabric.new
     FabricHelper.build_fabric_information(@fabric)
     @date_ranges = FabricHelper.date_ranges
-    @styles_collection = FabricHelper.styles_collection
   end
   
   def create
     @church = Church.find(params[:church_id])
-    @fabric = @church.create_fabric(fabric_params)
-    redirect_to root_path
+    @fabric = @church.build_fabric(fabric_params)
+    if @fabric.save
+      redirect_to root_path
+    else 
+      render 'new'
+    end
   end
   
   private 

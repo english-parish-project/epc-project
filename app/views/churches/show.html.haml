@@ -1,36 +1,16 @@
 %h1= @church.name.capitalize
 
 %div
-Date First Mentioned in Text:
-= @church.date_first_mention_in_text
-
-%div
-First Mentioned Description: 
-= @church.first_mention_description
-
-%div
-Earliest Extant Fabric Date:
-= @church.date_earliest_extant_fabric
-
-%div
-Date Secured: 
-= @church.date_earliest_extant_fabric_secured
-
-%div
-Earliest Extant Fabrtic Desrcription:
-= @church.earliest_extant_fabric_description
-
-%div
 Town:
 = @church.town
 
 %div
-Building of England Volume:
-= @church.buildings_of_england_volume
-
-%div
 County:
 = @church.county
+
+%div
+Building of England Volume:
+= @church.buildings_of_england_volume
 
 %div
 Diocese:
@@ -47,11 +27,57 @@ Longitude:
 %div
 latitude:
 = @church.latitude
+  
+%div
+Minster Status: 
+= @church.minster_status
+
+%div
+Minster Current Status: 
+= @church.minster_current_status
+
+%div
+Collegiate Status: 
+= @church.collegiate_status
+
+%div
+Collegiate Date: 
+= @church.collegiate_date
+
+%div
+Date First Mentioned in Text:
+= @church.first_mentioned_in_text
+
+%div
+First Mentioned in Text Information: 
+= @church.first_mentioned_in_text_information
+
+%div
+Earliest Extant Fabric Date:
+= @church.earliest_extant_fabric_date
+
+%div
+Date Secured: 
+= @church.earliest_extant_fabric_date_secured
+
+%div
+Information on Earliest Extant Fabrtic Date:
+= @church.earliest_extant_fabric_date_information
+
+%div
+Information on Earliest Extant Fabrtic Date:
+= @church.earliest_extant_fabric_location
+
+%div
+General Notes:
+= @church.general_notes
 
 - if @church.fabric.nave.present?
   %h2= @church.name.capitalize + " Fabric"
+  Styles: 
+  = @church.fabric.styles
+  
   %h3 Nave
-
   %div
   Date:
   = @church.fabric.nave.date
@@ -63,7 +89,15 @@ latitude:
   %div
   Information on Date:
   = @church.fabric.nave.date_information
-   
+  
+  %div
+  Styles:
+  = @church.fabric.nave.styles
+  
+  %div
+  General Notes: 
+  = @church.fabric.nave.general_notes
+ 
 - if @church.fabric.alter.present?
   %h3 Alter
 
@@ -85,7 +119,7 @@ latitude:
     
   %div
   Location:
-  = @church.fabric.alter.location
+  = @church.fabric.alter.location_in_chancel
 
 - if @church.fabric.chancel.present?
   %h3 Chancel
@@ -105,6 +139,11 @@ latitude:
   %div
   Location:
   = @church.fabric.chancel.chancel_arch_description
+  
+  %div
+  Styles:
+  = @church.fabric.chancel.styles
+
    
   
   
