@@ -11,6 +11,7 @@ FactoryGirl.define do
       association :nave
       association :alter
       association :chancel
+      after(:create) { |fabric| create(:chantry_chapel, fabric: fabric) }
     end
   end
 end

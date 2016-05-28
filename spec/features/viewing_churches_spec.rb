@@ -57,5 +57,16 @@ feature 'viewing churches' do
         church.fabric.chancel.date_evidence
         church.fabric.chancel.chancel_arch_description
     end
+    
+    scenario 'chantry chapel information' do
+      visit church_path(church.id)
+      save_and_open_page
+      expect(page).to have_content 
+        church.fabric.chantry_chapels.first.date
+        church.fabric.chantry_chapels.first.date_secured
+        church.fabric.chantry_chapels.first.date_evidence
+        church.fabric.chantry_chapels.first.location
+        church.fabric.chantry_chapels.first.notes
+    end
   end
 end

@@ -161,10 +161,11 @@ General Notes:
     = tower.notes
   
 - if @church.fabric.chantry_chapels.present?
-  %h3 Chantry Chapels
+  %h3 Chantry Chapels 
   - @church.fabric.chantry_chapels.each do |chantry_chapel|     
-    %div           
-    = "Chantry Chapel #{chantry_chapel.id}"
+    %div  
+    = render partial: "chantry_chapels/attributes", locals: {chantry_chapel: chantry_chapel}
+
       
   
   
