@@ -29,11 +29,11 @@ feature 'adding a church' do
       select 'Yes', from: "church[minster_status]"
       select 'Yes', from: "church[collegiate_status]"
       fill_in "church[first_mentioned_in_text]", with: 700
-      fill_in "church[first_mentioned_in_text_information]", with: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      fill_in "church[first_mentioned_in_text_explanation]", with: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
       select '700-725', :from => "church[earliest_extant_fabric_date]"
-      fill_in "church[earliest_extant_fabric_date_information]", with: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      fill_in "church[earliest_extant_fabric_date_evidence]", with: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
       fill_in "church[earliest_extant_fabric_location]", with: "location of earliest extant fabric"
-      fill_in "church[general_notes]", with: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      fill_in "church[general_comments]", with: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
       click_button 'Save/Next-Add Fabric'
       expect(current_path).to eq edit_fabric_path(Church.first.fabric.id)
     end
@@ -47,8 +47,8 @@ feature 'adding a church' do
         select '700-725', :from => 'Date'
         select 'No', from: "fabric[nave_attributes][date_secured]"
         find("#fabric_nave_attributes_styles_saxon-norman_overlap").set(true)
-        fill_in "fabric[nave_attributes][date_information]", with: "Lorem ipsum dolor sit amet."
-        fill_in "fabric[nave_attributes][general_notes]", with: "fabric general notes"
+        fill_in "fabric[nave_attributes][date_evidence]", with: "Lorem ipsum dolor sit amet."
+        fill_in "fabric[nave_attributes][notes]", with: "fabric general notes"
       end
       click_button 'Submit'
       visit church_path(church.id)
@@ -60,7 +60,7 @@ feature 'adding a church' do
       within('.alter') do
         select '700-725', :from => 'Date'
         select 'Yes', from: "fabric[alter_attributes][date_secured]"
-        fill_in "fabric[alter_attributes][date_information]", with: "Lorem ipsum dolor sit amet."
+        fill_in "fabric[alter_attributes][date_evidence]", with: "Lorem ipsum dolor sit amet."
         fill_in "fabric[alter_attributes][location_in_chancel]", with: "Quisque velit nisi."
       end
       click_button 'Submit'
@@ -73,7 +73,7 @@ feature 'adding a church' do
       within('.chancel') do
         select '700-725', from: "fabric[chancel_attributes][date]"
         select 'Yes', from: "fabric[chancel_attributes][date_secured]"
-        fill_in "fabric[chancel_attributes][date_information]", with: "Lorem ipsum dolor sit amet."
+        fill_in "fabric[chancel_attributes][date_evidence]", with: "Lorem ipsum dolor sit amet."
         fill_in "fabric[chancel_attributes][chancel_arch_description]", with: "Quisque velit nisi."
       end
       click_button 'Submit'
@@ -86,11 +86,10 @@ feature 'adding a church' do
       within('.tower') do
         select '700-725', from: "fabric[towers_attributes][0][date]"
         fill_in "fabric[towers_attributes][0][location]", with: "Lorem ipsum dolor sit amet."
-        fill_in "fabric[towers_attributes][0][date_information]", with: "Quisque velit nisi."
+        fill_in "fabric[towers_attributes][0][date_evidence]", with: "Quisque velit nisi."
       end
       click_button 'Submit'
       visit church_path(church.id)
-      save_and_open_page
       expect(page).to have_content "Tower #{church.fabric.towers.first.id}"
     end
   end

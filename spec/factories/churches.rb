@@ -13,11 +13,11 @@ FactoryGirl.define do
     collegiate_status true
     collegiate_date 900
     first_mentioned_in_text 850
-    first_mentioned_in_text_information "Lorem ipsum dolor sit amet"
+    first_mentioned_in_text_explanation "Lorem ipsum dolor sit amet"
     earliest_extant_fabric_date "700-725"
     earliest_extant_fabric_date_secured true
-    earliest_extant_fabric_date_information "Lorem ipsum dolor sit amet"
+    earliest_extant_fabric_date_evidence "Lorem ipsum dolor sit amet"
     earliest_extant_fabric_location "Mauris blandit aliquet elit, eget tincidunt"
-    general_notes "Vivamus suscipit tortor eget felis porttitor volutpat."
+    general_comments "Vivamus suscipit tortor eget felis porttitor volutpat."
   end
 end

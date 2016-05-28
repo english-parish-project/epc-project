@@ -50,7 +50,7 @@ Date First Mentioned in Text:
 
 %div
 First Mentioned in Text Information: 
-= @church.first_mentioned_in_text_information
+= @church.first_mentioned_in_text_explanation
 
 %div
 Earliest Extant Fabric Date:
@@ -62,7 +62,7 @@ Date Secured:
 
 %div
 Information on Earliest Extant Fabrtic Date:
-= @church.earliest_extant_fabric_date_information
+= @church.earliest_extant_fabric_date_evidence
 
 %div
 Location of Earliest Extant Fabrtic Date:
@@ -70,7 +70,7 @@ Location of Earliest Extant Fabrtic Date:
 
 %div
 General Notes:
-= @church.general_notes
+= @church.general_comments
 
 - if @church.fabric.nave.present?
   %h2= @church.name.capitalize + " Fabric"
@@ -88,7 +88,7 @@ General Notes:
 
   %div
   Information on Date:
-  = @church.fabric.nave.date_information
+  = @church.fabric.nave.date_evidence
   
   %div
   Styles:
@@ -96,7 +96,7 @@ General Notes:
   
   %div
   General Notes: 
-  = @church.fabric.nave.general_notes
+  = @church.fabric.nave.notes
  
 - if @church.fabric.alter.present?
   %h3 Alter
@@ -115,7 +115,7 @@ General Notes:
 
   %div
   Information on Date:
-  = @church.fabric.alter.date_information
+  = @church.fabric.alter.date_evidence
     
   %div
   Location:
@@ -134,7 +134,7 @@ General Notes:
 
   %div
   Information on Date:
-  = @church.fabric.chancel.date_information
+  = @church.fabric.chancel.date_evidence
     
   %div
   Location:
@@ -155,7 +155,7 @@ General Notes:
     %div
     = tower.date_secured
     %div
-    = tower.date_information
+    = tower.date_evidence
 
   
   

@@ -22,11 +22,11 @@ feature 'viewing churches' do
         church.collegiate_status
         church.collegiate_date
         church.first_mentioned_in_text
-        church.first_mentioned_in_text_information
+        church.first_mentioned_in_text_explanation
         church.earliest_extant_fabric_date
         church.earliest_extant_fabric_date_secured
-        church.earliest_extant_fabric_date_information
-        church.general_notes
+        church.earliest_extant_fabric_date_evidence
+        church.general_comments
     end
     
     scenario 'nave information' do
@@ -34,9 +34,9 @@ feature 'viewing churches' do
       expect(page).to have_content 
         church.fabric.nave.date
         church.fabric.nave.date_secured
-        church.fabric.nave.date_information
+        church.fabric.nave.date_evidence
         church.fabric.nave.styles
-        church.fabric.nave.general_notes
+        church.fabric.nave.notes
     end
     
     scenario 'alter information' do
@@ -45,7 +45,7 @@ feature 'viewing churches' do
         church.fabric.alter.medieval_alter
         church.fabric.alter.date
         church.fabric.alter.date_secured
-        church.fabric.alter.date_information
+        church.fabric.alter.date_evidence
         church.fabric.alter.location_in_chancel
     end
     
@@ -54,7 +54,7 @@ feature 'viewing churches' do
       expect(page).to have_content 
         church.fabric.chancel.date
         church.fabric.chancel.date_secured
-        church.fabric.chancel.date_information
+        church.fabric.chancel.date_evidence
         church.fabric.chancel.chancel_arch_description
     end
   end

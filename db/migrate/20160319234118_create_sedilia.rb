@@ -3,7 +3,7 @@ class CreateSedilia < ActiveRecord::Migration
     create_table :sedilia do |t|
       t.string :date
       t.boolean :date_secured
-      t.text :date_information
+      t.text :date_evidence
       t.string :styles, array: true, default:[]
        
       t.belongs_to :fabric, index: true

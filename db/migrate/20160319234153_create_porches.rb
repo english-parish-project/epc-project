@@ -3,9 +3,11 @@ class CreatePorches < ActiveRecord::Migration
     create_table :porches do |t|
       t.text :location
       t.string :date
+      t.boolean :date_secured
+      t.text :date_evidence
       t.boolean :valuting
       t.text :valuting_type
-      t.text :valuting_description
+      t.text :notes
        
       t.belongs_to :fabric, index: true
       t.timestamps null: false

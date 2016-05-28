@@ -3,7 +3,7 @@ class CreateDoors < ActiveRecord::Migration
     create_table :doors do |t|
       t.text :location
       t.boolean :original
-      t.text :description
+      t.text :notes
        
       t.belongs_to :fabric, index: true
       t.timestamps null: false

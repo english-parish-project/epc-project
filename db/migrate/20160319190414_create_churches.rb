@@ -14,12 +14,12 @@ class CreateChurches < ActiveRecord::Migration
       t.boolean :collegiate_status
       t.integer :collegiate_date
       t.integer :first_mentioned_in_text
-      t.text :first_mentioned_in_text_information
+      t.text :first_mentioned_in_text_explanation
       t.string :earliest_extant_fabric_date
-      t.text :earliest_extant_fabric_date_information
+      t.text :earliest_extant_fabric_date_evidence
       t.boolean :earliest_extant_fabric_date_secured
       t.text :earliest_extant_fabric_location
-      t.text :general_notes
+      t.text :general_comments
 
       t.timestamps null: false
     end

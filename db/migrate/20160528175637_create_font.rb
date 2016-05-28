@@ -1,11 +1,11 @@
-class CreateAlters < ActiveRecord::Migration
+class CreateFont < ActiveRecord::Migration
   def change
-    create_table :alters do |t|
-      t.boolean :medieval_alter
+    create_table :fonts do |t|
+      t.text :location
       t.string :date
       t.boolean :date_secured
       t.text :date_evidence
-      t.text :location_in_chancel
+      t.text :notes
        
       t.belongs_to :fabric, index: true
       t.timestamps null: false

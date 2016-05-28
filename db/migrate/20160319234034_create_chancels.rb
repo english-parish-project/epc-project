@@ -3,7 +3,7 @@ class CreateChancels < ActiveRecord::Migration
     create_table :chancels do |t|
       t.string :date
       t.boolean :date_secured
-      t.text :date_information
+      t.text :date_evidence
       t.string :styles, array: true, default:[]
       t.text :chancel_arch_description
     

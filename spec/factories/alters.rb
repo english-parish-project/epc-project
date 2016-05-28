@@ -3,7 +3,7 @@ FactoryGirl.define do
     medieval_alter true
     date "700-725"
     date_secured true
-    date_information "Alter date information"
+    date_evidence "Alter date information"
     location_in_chancel "Alter lcoation in chancel"
   end
 end

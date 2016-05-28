@@ -15,6 +15,6 @@ class FabricsController < ApplicationController
   private 
   
   def fabric_params
-    params.require(:fabric).permit(nave_attributes: [:id, :date, :date_secured, :date_information, :general_notes, styles:[]], alter_attributes: [:id, :date, :date_secured, :date_information, :location, :medieval_alter, :location_in_chancel], towers_attributes: [:id, :location, :date, :date_secured, :date_information, :general_notes], chancel_attributes: [:id, :date, :date_secured, :date_information, :chancel_arch_description, styles:[]], styles:[])
+    params.require(:fabric).permit(nave_attributes: [:id, :date, :date_secured, :date_evidence, :notes, styles:[]], alter_attributes: [:id, :date, :date_secured, :date_evidence, :location, :medieval_alter, :location_in_chancel], towers_attributes: [:id, :location, :date, :date_secured, :date_evidence, :notes], chancel_attributes: [:id, :date, :date_secured, :date_evidence, :chancel_arch_description, styles:[]], styles:[])
   end 
 end

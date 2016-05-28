@@ -4,8 +4,8 @@ class CreateTowers < ActiveRecord::Migration
       t.string :location
       t.string :date
       t.boolean :date_secured
-      t.text :date_information
-      t.text :general_notes
+      t.text :date_evidence
+      t.text :notes
       
       t.belongs_to :fabric, index: true
       t.timestamps null: false
