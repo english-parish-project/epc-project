@@ -35,4 +35,5 @@
               .checkbox-inline
                 = style.check_box + style.text
             = chancel_form.input :chancel_arch_description
-        = f.button("submit", class: "btn btn-primary")
+        .btn.btn-primary
+          = f.submit 'Submit'
