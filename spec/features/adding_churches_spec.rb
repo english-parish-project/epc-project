@@ -92,5 +92,20 @@ feature 'adding a church' do
       visit church_path(church.id)
       expect(page).to have_content "Tower #{church.fabric.towers.first.id}"
     end
+    
+    scenario 'adding Chantry Chapel information' do
+      visit edit_fabric_path(church.fabric.id)
+      within('.chantry_chapel') do
+        select '700-725', from: "fabric[chantry_chapels_attributes][0][date]"
+        select 'Yes', from: "fabric[chantry_chapels_attributes][0][date_secured]"
+        fill_in "fabric[chantry_chapels_attributes][0][location]", with: "location - Lorem ipsum dolor sit amet."
+        fill_in "fabric[chantry_chapels_attributes][0][date_evidence]", with: "Date evidence - Quisque velit nisi."
+        fill_in "fabric[chantry_chapels_attributes][0][funding_information]", with: "Funding information - Lorem ipsum dolor sit amet."
+        fill_in "fabric[chantry_chapels_attributes][0][notes]", with: "Notes - Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+      end
+      click_button 'Submit'
+      visit church_path(church.id)
+      expect(page).to have_content "Chantry Chapel #{church.fabric.chantry_chapels.first.id}"
+    end
   end
 end

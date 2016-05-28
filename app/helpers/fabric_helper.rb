@@ -45,5 +45,6 @@ module FabricHelper
     fabric.build_chancel
     fabric.build_alter
     fabric.towers.build
+    fabric.chantry_chapels.build
   end
 end

@@ -1,0 +1,2 @@
+class ChantryChapelsController < ApplicationController
+end

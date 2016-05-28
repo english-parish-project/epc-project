@@ -7,7 +7,7 @@ class CreateChantryChapels < ActiveRecord::Migration
       t.text :location
       t.string :funding_information
       t.string :styles, array: true, default:[]
-      t.text :general_notes
+      t.text :notes
       
       t.belongs_to :fabric, index: true
       t.timestamps null: false

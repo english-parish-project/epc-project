@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20160528175637) do
     t.text     "location"
     t.string   "funding_information"
     t.string   "styles",              default: [],              array: true
-    t.text     "general_notes"
+    t.text     "notes"
     t.integer  "fabric_id"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
