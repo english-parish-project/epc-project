@@ -33,7 +33,7 @@ class Fabric < ActiveRecord::Base
   accepts_nested_attributes_for :lady_chapel
   
   has_many :towers
-  accepts_nested_attributes_for :towers
+  accepts_nested_attributes_for :towers, reject_if: :all_blank, allow_destroy: true
   
   belongs_to :church
 end
