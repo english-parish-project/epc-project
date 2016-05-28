@@ -23,6 +23,8 @@ gem 'simple_form'
 
 gem 'pry-rails'
 
+gem "cocoon"
+
 group :development, :test do
  gem 'rspec-rails'
  gem 'capybara'
