@@ -144,6 +144,18 @@ General Notes:
   Styles:
   = @church.fabric.chancel.styles
 
-   
+- if @church.fabric.towers.present?
+  %h3 Towers
+  - @church.fabric.towers.each do |tower|                
+    = "Tower #{tower.id}"
+    %div
+    = tower.location
+    %div
+    = tower.date
+    %div
+    = tower.date_secured
+    %div
+    = tower.date_information
+
   
   

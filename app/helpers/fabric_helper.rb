@@ -44,5 +44,6 @@ module FabricHelper
     fabric.build_nave
     fabric.build_chancel
     fabric.build_alter
+    fabric.towers.build
   end
 end

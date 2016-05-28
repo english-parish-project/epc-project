@@ -1,6 +1,6 @@
 .container
   .col-xs-12
-    = form_for [@church, @fabric] do |f|
+    = simple_form_for @fabric do |f|
       %strong Select Style(s):
       =f.collection_check_boxes(:styles, Style.all, :name, :name, include_hidden: false) do |style|
         .checkbox-inline
@@ -8,6 +8,11 @@
       
       = f.simple_fields_for :nave do |nave_form|
         = render partial: "naves/form", locals: {nave_form: nave_form}
+        
+      = f.simple_fields_for :towers do |tower|
+        = render partial: 'tower_fields', locals: {f: tower}
+      .links
+        = link_to_add_association 'add tower', f, :towers
 
       = f.simple_fields_for :alter do |alter_form|
         %h4
@@ -30,4 +35,5 @@
               .checkbox-inline
                 = style.check_box + style.text
             = chancel_form.input :chancel_arch_description
-        = f.button("submit", class: "btn btn-primary")
+        .btn.btn-primary
+          = f.submit 'Submit'
