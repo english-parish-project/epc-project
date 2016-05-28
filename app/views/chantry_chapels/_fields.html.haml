@@ -1,0 +1,15 @@
+%h4
+  .label.label-warning Add Chantry Chapel Information:
+.chantry_chapel
+  .nested-fields
+    %strong Select Style(s):
+    = f.collection_check_boxes(:styles, Style.all, :name, :name, include_hidden: false) do |style|
+      .checkbox-inline
+        = style.check_box + style.text
+    = f.input :location
+    = f.input :date, collection: @date_ranges, prompt: "Select Date"
+    = f.input :date_secured, label: 'Date Secured?', as: :select
+    = f.input :date_evidence
+    = f.input :funding_information
+    = f.input :notes
+    = link_to_remove_association "remove chantry chapel", f

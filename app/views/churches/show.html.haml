@@ -147,6 +147,7 @@ General Notes:
 - if @church.fabric.towers.present?
   %h3 Towers
   - @church.fabric.towers.each do |tower|                
+    %div
     = "Tower #{tower.id}"
     %div
     = tower.location
@@ -158,7 +159,12 @@ General Notes:
     = tower.date_evidence
     %div
     = tower.notes
-    
-
+  
+- if @church.fabric.chantry_chapels.present?
+  %h3 Chantry Chapels
+  - @church.fabric.chantry_chapels.each do |chantry_chapel|     
+    %div           
+    = "Chantry Chapel #{chantry_chapel.id}"
+      
   
   
