@@ -75,7 +75,9 @@ General Notes:
 - if @church.fabric.nave.present?
   %h2= @church.name.capitalize + " Fabric"
   Styles: 
-  = @church.fabric.styles
+  - @church.fabric.styles.each do |style|
+    %div
+    = style
   
   %h3 Nave
   %div
@@ -92,7 +94,9 @@ General Notes:
   
   %div
   Styles:
-  = @church.fabric.nave.styles
+  - @church.fabric.nave.styles.each do |style|
+    %div
+    = style
   
   %div
   General Notes: 
@@ -142,23 +146,15 @@ General Notes:
   
   %div
   Styles:
-  = @church.fabric.chancel.styles
+  - @church.fabric.chancel.styles do |style|
+    %div
+    = style
 
 - if @church.fabric.towers.present?
   %h3 Towers
   - @church.fabric.towers.each do |tower|                
-    %div
-    = "Tower #{tower.id}"
-    %div
-    = tower.location
-    %div
-    = tower.date
-    %div
-    = tower.date_secured
-    %div
-    = tower.date_evidence
-    %div
-    = tower.notes
+    %div  
+    = render partial: "towers/attributes", locals: {tower: tower}
   
 - if @church.fabric.chantry_chapels.present?
   %h3 Chantry Chapels 
