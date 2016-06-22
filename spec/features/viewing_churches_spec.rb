@@ -60,7 +60,6 @@ feature 'viewing churches' do
     
     scenario 'chantry chapel information' do
       visit church_path(church.id)
-      save_and_open_page
       expect(page).to have_content 
         church.fabric.chantry_chapels.first.date
         church.fabric.chantry_chapels.first.date_secured
