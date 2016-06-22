@@ -14,7 +14,9 @@ Date Evidence:
 = chantry_chapel.date_evidence
 %div
 Styles:
-= chantry_chapel.styles
+- chantry_chapel.styles.each do |style|
+  %div
+  = style
 %div
 Funding Information:
 = chantry_chapel.funding_information

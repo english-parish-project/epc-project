@@ -94,7 +94,9 @@ General Notes:
   
   %div
   Styles:
-  = @church.fabric.nave.styles
+  - @church.fabric.nave.styles.each do |style|
+    %div
+    = style
   
   %div
   General Notes: 
@@ -144,7 +146,9 @@ General Notes:
   
   %div
   Styles:
-  = @church.fabric.chancel.styles
+  - @church.fabric.chancel.styles do |style|
+    %div
+    = style
 
 - if @church.fabric.towers.present?
   %h3 Towers
