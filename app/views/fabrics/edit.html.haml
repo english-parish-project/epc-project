@@ -10,9 +10,9 @@
         = render partial: "naves/form", locals: {nave_form: nave_form}
         
       = f.simple_fields_for :towers do |tower|
-        = render partial: 'tower_fields', locals: {f: tower}
+        = render partial: 'towers/fields', locals: {f: tower}
       .links
-        = link_to_add_association 'add tower', f, :towers
+        = link_to_add_association 'add tower', f, :towers, partial: 'towers/fields'
         
       = f.simple_fields_for :chantry_chapels do |chantry_chapel|
         = render partial: 'chantry_chapels/fields', locals: {f: chantry_chapel}
