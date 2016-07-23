@@ -1,6 +1,6 @@
 .container
   .col-xs-12
-    = simple_form_for @fabric, :url => fabric_form_part1_path, :method => :put do |f|
+    = simple_form_for @fabric, url: fabric_form_part1_path, method: :put do |f|
       %strong Select Style(s):
       =f.collection_check_boxes(:styles, Style.all, :name, :name, include_hidden: false) do |style|
         .checkbox-inline
@@ -21,14 +21,7 @@
         = link_to_add_association 'add chantry chapel', f, :chantry_chapels, partial: 'chantry_chapels/fields'
 
       = f.simple_fields_for :altar do |altar_form|
-        %h4
-          .label.label-warning Add Altar Information:
-        .altar
-          = altar_form.input :medieval_altar, ladel: 'Medieval Altar?',  as: :select
-          = altar_form.input :date, collection: @date_ranges, prompt: "Select Date"
-          = altar_form.input :date_secured, label: 'Date Secured?',  as: :select
-          = altar_form.input :date_evidence
-          = altar_form.input :location_in_chancel
+        = render partial: "altars/fields", locals: {altar_form: altar_form}
         
         = f.simple_fields_for :chancel do |chancel_form|
           %h4

@@ -1,0 +1,2 @@
+class AltarsController < ApplicationController
+end

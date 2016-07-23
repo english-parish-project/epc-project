@@ -104,26 +104,9 @@ Notes:
  
 - if @church.fabric.altar.present?
   %h3 Altar
+  %div  
+  = render partial: "altars/attributes", locals: {church: @church}
 
-  %div
-  Medival Altar?
-  = @church.fabric.altar.medieval_altar
-
-  %div
-  Date:
-  = @church.fabric.altar.date
-
-  %div
-  Date Secured? 
-  = @church.fabric.altar.date_secured
-
-  %div
-  Information on Date:
-  = @church.fabric.altar.date_evidence
-    
-  %div
-  Location:
-  = @church.fabric.altar.location_in_chancel
 
 - if @church.fabric.chancel.present?
   %h3 Chancel
