@@ -175,6 +175,7 @@ ActiveRecord::Schema.define(version: 20160723120048) do
     t.boolean  "date_secured"
     t.text     "date_evidence"
     t.text     "description"
+    t.text     "notes"
     t.integer  "fabric_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -187,6 +188,7 @@ ActiveRecord::Schema.define(version: 20160723120048) do
     t.boolean  "date_secured"
     t.text     "date_evidence"
     t.string   "styles",        default: [],              array: true
+    t.text     "notes"
     t.integer  "fabric_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
