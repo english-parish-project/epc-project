@@ -43,7 +43,7 @@ module FabricHelper
   def self.build_fabric_information(fabric)
     fabric.build_nave
     fabric.build_chancel
-    fabric.build_alter
+    fabric.build_altar
     fabric.towers.build
     fabric.chantry_chapels.build
   end

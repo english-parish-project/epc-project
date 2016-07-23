@@ -55,17 +55,17 @@ feature 'adding a church' do
       expect(page).to have_content "Nave"
     end
     
-    scenario 'adding alter information' do
+    scenario 'adding altar information' do
       visit edit_fabric_path(church.fabric.id)
-      within('.alter') do
+      within('.altar') do
         select '700-725', :from => 'Date'
-        select 'Yes', from: "fabric[alter_attributes][date_secured]"
-        fill_in "fabric[alter_attributes][date_evidence]", with: "Lorem ipsum dolor sit amet."
-        fill_in "fabric[alter_attributes][location_in_chancel]", with: "Quisque velit nisi."
+        select 'Yes', from: "fabric[altar_attributes][date_secured]"
+        fill_in "fabric[altar_attributes][date_evidence]", with: "Lorem ipsum dolor sit amet."
+        fill_in "fabric[altar_attributes][location_in_chancel]", with: "Quisque velit nisi."
       end
       click_button 'Submit'
       visit church_path(church.id)
-      expect(page).to have_content "Alter"
+      expect(page).to have_content "Altar"
     end
     
     scenario 'adding chancel information' do
