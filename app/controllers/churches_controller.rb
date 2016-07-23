@@ -14,7 +14,7 @@ class ChurchesController < ApplicationController
   def create
     @church = Church.create(church_params)
     fabric = @church.create_fabric
-    redirect_to edit_fabric_path(fabric.id)
+    redirect_to fabric_form_part1_path(fabric.id)
   end
   
   def show

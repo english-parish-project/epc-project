@@ -35,14 +35,17 @@ feature 'adding a church' do
       fill_in "church[earliest_extant_fabric_location]", with: "location of earliest extant fabric"
       fill_in "church[notes]", with: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
       click_button 'Save/Next-Add Fabric'
-      expect(current_path).to eq edit_fabric_path(Church.first.fabric.id)
+      expect(current_path).to eq fabric_form_part1_path(Church.first.fabric.id)
     end
   end
   
   context 'adding fabric information' do
-    before(:each) { church.create_fabric }
+    before(:each) do 
+      church.create_fabric 
+      visit fabric_form_part1_path(church.fabric.id)
+    end
+    
     scenario 'adding nave' do 
-      visit edit_fabric_path(church.fabric.id)
       within('.nave') do
         select '700-725', :from => 'Date'
         select 'No', from: "fabric[nave_attributes][date_secured]"
@@ -56,7 +59,6 @@ feature 'adding a church' do
     end
     
     scenario 'adding altar information' do
-      visit edit_fabric_path(church.fabric.id)
       within('.altar') do
         select '700-725', :from => 'Date'
         select 'Yes', from: "fabric[altar_attributes][date_secured]"
@@ -69,7 +71,6 @@ feature 'adding a church' do
     end
     
     scenario 'adding chancel information' do
-      visit edit_fabric_path(church.fabric.id)
       within('.chancel') do
         select '700-725', from: "fabric[chancel_attributes][date]"
         select 'Yes', from: "fabric[chancel_attributes][date_secured]"
@@ -82,7 +83,6 @@ feature 'adding a church' do
     end
     
     scenario 'adding tower information' do
-      visit edit_fabric_path(church.fabric.id)
       within('.tower') do
         select '700-725', from: "fabric[towers_attributes][0][date]"
         fill_in "fabric[towers_attributes][0][location]", with: "Lorem ipsum dolor sit amet."
@@ -94,7 +94,6 @@ feature 'adding a church' do
     end
     
     scenario 'adding Chantry Chapel information' do
-      visit edit_fabric_path(church.fabric.id)
       within('.chantry_chapel') do
         select '700-725', from: "fabric[chantry_chapels_attributes][0][date]"
         select 'Yes', from: "fabric[chantry_chapels_attributes][0][date_secured]"
