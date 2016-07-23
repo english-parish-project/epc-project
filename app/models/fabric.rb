@@ -5,8 +5,8 @@ class Fabric < ActiveRecord::Base
   has_one :chancel
   accepts_nested_attributes_for :chancel, reject_if: :all_blank
   
-  has_one :alter
-  accepts_nested_attributes_for :alter, reject_if: :all_blank
+  has_one :altar
+  accepts_nested_attributes_for :altar, reject_if: :all_blank
   
   has_one :sedilia
   accepts_nested_attributes_for :sedilia

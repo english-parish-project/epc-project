@@ -37,13 +37,13 @@ feature 'viewing churches' do
       expect(page).to have_content "#{church.fabric.nave.notes}"
     end
     
-    scenario 'alter information' do
+    scenario 'altar information' do
       visit church_path(church.id)
-      expect(page).to have_content "#{church.fabric.alter.medieval_alter}"
-      expect(page).to have_content "#{church.fabric.alter.date}"
-      expect(page).to have_content "#{church.fabric.alter.date_secured}"
-      expect(page).to have_content "#{church.fabric.alter.date_evidence}"
-      expect(page).to have_content "#{church.fabric.alter.location_in_chancel}"
+      expect(page).to have_content "#{church.fabric.altar.medieval_altar}"
+      expect(page).to have_content "#{church.fabric.altar.date}"
+      expect(page).to have_content "#{church.fabric.altar.date_secured}"
+      expect(page).to have_content "#{church.fabric.altar.date_evidence}"
+      expect(page).to have_content "#{church.fabric.altar.location_in_chancel}"
     end
     
     scenario 'chancel information' do

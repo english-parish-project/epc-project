@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Fabric, type: :model do
   it {  is_expected.to belong_to(:church) }
-  it {  is_expected.to have_one(:alter) }
+  it {  is_expected.to have_one(:altar) }
   it {  is_expected.to have_one(:chancel) }
   it {  is_expected.to have_many(:chantry_chapels) }
   it {  is_expected.to have_many(:doors) }
