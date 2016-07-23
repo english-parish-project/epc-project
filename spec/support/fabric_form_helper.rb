@@ -5,9 +5,9 @@ def fill_nave_information
   end
 end
 
-def fill_alter_information
-  within('.alter') do
-    find("#fabric_alter_attributes_medieval_alter").set(true) 
+def fill_altar_information
+  within('.altar') do
+    find("#fabric_altar_attributes_medieval_altar").set(true) 
     select '700-725', :from => 'Date'
     fill_in 'Date information', with: "Lorem ipsum dolor sit amet."
     fill_in 'Location', with: "Quisque velit nisi."

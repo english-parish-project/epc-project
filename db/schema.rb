@@ -11,33 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160528175637) do
+ActiveRecord::Schema.define(version: 20160723120048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "alters", force: :cascade do |t|
-    t.boolean  "medieval_alter"
+  create_table "altars", force: :cascade do |t|
+    t.boolean  "medieval_altar"
     t.string   "date"
     t.boolean  "date_secured"
     t.text     "date_evidence"
     t.text     "location_in_chancel"
+    t.text     "notes"
     t.integer  "fabric_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
 
-  add_index "alters", ["fabric_id"], name: "index_alters_on_fabric_id", using: :btree
+  add_index "altars", ["fabric_id"], name: "index_altars_on_fabric_id", using: :btree
 
   create_table "chancels", force: :cascade do |t|
     t.string   "date"
     t.boolean  "date_secured"
     t.text     "date_evidence"
-    t.string   "styles",                   default: [],              array: true
-    t.text     "chancel_arch_description"
+    t.string   "styles",        default: [],              array: true
+    t.text     "notes"
     t.integer  "fabric_id"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "chancels", ["fabric_id"], name: "index_chancels_on_fabric_id", using: :btree
@@ -76,7 +77,7 @@ ActiveRecord::Schema.define(version: 20160528175637) do
     t.text     "earliest_extant_fabric_date_evidence"
     t.boolean  "earliest_extant_fabric_date_secured"
     t.text     "earliest_extant_fabric_location"
-    t.text     "general_comments"
+    t.text     "notes"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
   end
@@ -120,7 +121,7 @@ ActiveRecord::Schema.define(version: 20160528175637) do
     t.text     "date_evidence"
     t.string   "location"
     t.string   "styles",        default: [],              array: true
-    t.text     "general_notes"
+    t.text     "notes"
     t.integer  "fabric_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
@@ -174,6 +175,7 @@ ActiveRecord::Schema.define(version: 20160528175637) do
     t.boolean  "date_secured"
     t.text     "date_evidence"
     t.text     "description"
+    t.text     "notes"
     t.integer  "fabric_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -186,6 +188,7 @@ ActiveRecord::Schema.define(version: 20160528175637) do
     t.boolean  "date_secured"
     t.text     "date_evidence"
     t.string   "styles",        default: [],              array: true
+    t.text     "notes"
     t.integer  "fabric_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false

@@ -20,15 +20,15 @@
       .links
         = link_to_add_association 'add chantry chapel', f, :chantry_chapels, partial: 'chantry_chapels/fields'
 
-      = f.simple_fields_for :alter do |alter_form|
+      = f.simple_fields_for :altar do |altar_form|
         %h4
-          .label.label-warning Add Alter Information:
-        .alter
-          = alter_form.input :medieval_alter, ladel: 'Medieval Alter?',  as: :select
-          = alter_form.input :date, collection: @date_ranges, prompt: "Select Date"
-          = alter_form.input :date_secured, label: 'Date Secured?',  as: :select
-          = alter_form.input :date_evidence
-          = alter_form.input :location_in_chancel
+          .label.label-warning Add Altar Information:
+        .altar
+          = altar_form.input :medieval_altar, ladel: 'Medieval Altar?',  as: :select
+          = altar_form.input :date, collection: @date_ranges, prompt: "Select Date"
+          = altar_form.input :date_secured, label: 'Date Secured?',  as: :select
+          = altar_form.input :date_evidence
+          = altar_form.input :location_in_chancel
         
         = f.simple_fields_for :chancel do |chancel_form|
           %h4
@@ -40,6 +40,7 @@
             = chancel_form.collection_check_boxes(:styles, Style.all, :name, :name, include_hidden: false) do |style|
               .checkbox-inline
                 = style.check_box + style.text
-            = chancel_form.input :chancel_arch_description
+            = chancel_form.input :notes
+          
         .btn.btn-primary
           = f.submit 'Submit'

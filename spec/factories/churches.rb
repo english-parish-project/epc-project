@@ -18,6 +18,6 @@ FactoryGirl.define do
     earliest_extant_fabric_date_secured true
     earliest_extant_fabric_date_evidence "Lorem ipsum dolor sit amet"
     earliest_extant_fabric_location "Mauris blandit aliquet elit, eget tincidunt"
-    general_comments "Vivamus suscipit tortor eget felis porttitor volutpat."
+    notes "Vivamus suscipit tortor eget felis porttitor volutpat."
   end
 end

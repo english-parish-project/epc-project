@@ -69,8 +69,8 @@ Location of Earliest Extant Fabrtic Date:
 = @church.earliest_extant_fabric_location
 
 %div
-General Notes:
-= @church.general_comments
+Notes:
+= @church.notes
 
 - if @church.fabric.nave.present?
   %h2= @church.name.capitalize + " Fabric"
@@ -99,31 +99,31 @@ General Notes:
     = style
   
   %div
-  General Notes: 
+  Notes: 
   = @church.fabric.nave.notes
  
-- if @church.fabric.alter.present?
-  %h3 Alter
+- if @church.fabric.altar.present?
+  %h3 Altar
 
   %div
-  Medival Alter?
-  = @church.fabric.alter.medieval_alter
+  Medival Altar?
+  = @church.fabric.altar.medieval_altar
 
   %div
   Date:
-  = @church.fabric.alter.date
+  = @church.fabric.altar.date
 
   %div
   Date Secured? 
-  = @church.fabric.alter.date_secured
+  = @church.fabric.altar.date_secured
 
   %div
   Information on Date:
-  = @church.fabric.alter.date_evidence
+  = @church.fabric.altar.date_evidence
     
   %div
   Location:
-  = @church.fabric.alter.location_in_chancel
+  = @church.fabric.altar.location_in_chancel
 
 - if @church.fabric.chancel.present?
   %h3 Chancel
@@ -139,10 +139,9 @@ General Notes:
   %div
   Information on Date:
   = @church.fabric.chancel.date_evidence
-    
-  %div
-  Location:
-  = @church.fabric.chancel.chancel_arch_description
+  
+  Notes: 
+  = @church.fabric.chancel.notes
   
   %div
   Styles:

@@ -33,7 +33,7 @@ feature 'adding a church' do
       select '700-725', :from => "church[earliest_extant_fabric_date]"
       fill_in "church[earliest_extant_fabric_date_evidence]", with: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
       fill_in "church[earliest_extant_fabric_location]", with: "location of earliest extant fabric"
-      fill_in "church[general_comments]", with: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      fill_in "church[notes]", with: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
       click_button 'Save/Next-Add Fabric'
       expect(current_path).to eq edit_fabric_path(Church.first.fabric.id)
     end
@@ -55,17 +55,17 @@ feature 'adding a church' do
       expect(page).to have_content "Nave"
     end
     
-    scenario 'adding alter information' do
+    scenario 'adding altar information' do
       visit edit_fabric_path(church.fabric.id)
-      within('.alter') do
+      within('.altar') do
         select '700-725', :from => 'Date'
-        select 'Yes', from: "fabric[alter_attributes][date_secured]"
-        fill_in "fabric[alter_attributes][date_evidence]", with: "Lorem ipsum dolor sit amet."
-        fill_in "fabric[alter_attributes][location_in_chancel]", with: "Quisque velit nisi."
+        select 'Yes', from: "fabric[altar_attributes][date_secured]"
+        fill_in "fabric[altar_attributes][date_evidence]", with: "Lorem ipsum dolor sit amet."
+        fill_in "fabric[altar_attributes][location_in_chancel]", with: "Quisque velit nisi."
       end
       click_button 'Submit'
       visit church_path(church.id)
-      expect(page).to have_content "Alter"
+      expect(page).to have_content "Altar"
     end
     
     scenario 'adding chancel information' do
@@ -74,7 +74,7 @@ feature 'adding a church' do
         select '700-725', from: "fabric[chancel_attributes][date]"
         select 'Yes', from: "fabric[chancel_attributes][date_secured]"
         fill_in "fabric[chancel_attributes][date_evidence]", with: "Lorem ipsum dolor sit amet."
-        fill_in "fabric[chancel_attributes][chancel_arch_description]", with: "Quisque velit nisi."
+        fill_in "fabric[chancel_attributes][notes]", with: "chancel notes."
       end
       click_button 'Submit'
       visit church_path(church.id)

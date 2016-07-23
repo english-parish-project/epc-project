@@ -4,6 +4,6 @@ FactoryGirl.define do
     date_secured true
     date_evidence "chancel date information"
     styles ["Anglo-Saxon", "Saxon-Norman Overlap"]
-    chancel_arch_description "Curabitur aliquet quam id dui posuere blandit"
+    notes "chancel notes"
   end
 end

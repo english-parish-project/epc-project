@@ -9,7 +9,7 @@ FactoryGirl.define do
       styles ["Anglo-Saxon", "Saxon-Norman Overlap"]
       association :church
       association :nave
-      association :alter
+      association :altar
       association :chancel
       after(:create) { |fabric| create(:chantry_chapel, fabric: fabric) }
       after(:create) { |fabric| create(:tower, fabric: fabric) }

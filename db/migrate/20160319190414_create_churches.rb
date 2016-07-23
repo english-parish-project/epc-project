@@ -19,7 +19,7 @@ class CreateChurches < ActiveRecord::Migration
       t.text :earliest_extant_fabric_date_evidence
       t.boolean :earliest_extant_fabric_date_secured
       t.text :earliest_extant_fabric_location
-      t.text :general_comments
+      t.text :notes
 
       t.timestamps null: false
     end

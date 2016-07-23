@@ -5,6 +5,7 @@ class CreateScreens < ActiveRecord::Migration
       t.boolean :date_secured
       t.text :date_evidence
       t.text :description
+      t.text :notes
        
       t.belongs_to :fabric, index: true
       t.timestamps null: false
