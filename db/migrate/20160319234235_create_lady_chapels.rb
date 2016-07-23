@@ -6,7 +6,7 @@ class CreateLadyChapels < ActiveRecord::Migration
       t.text :date_evidence
       t.string :location
       t.string :styles, array: true, default:[]
-      t.text :general_notes
+      t.text :notes
       
       t.belongs_to :fabric, index: true
       t.timestamps null: false

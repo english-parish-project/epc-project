@@ -40,6 +40,7 @@
             = chancel_form.collection_check_boxes(:styles, Style.all, :name, :name, include_hidden: false) do |style|
               .checkbox-inline
                 = style.check_box + style.text
-            = chancel_form.input :chancel_arch_description
+            = chancel_form.input :notes
+          
         .btn.btn-primary
           = f.submit 'Submit'

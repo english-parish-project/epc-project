@@ -5,7 +5,7 @@ class CreateChancels < ActiveRecord::Migration
       t.boolean :date_secured
       t.text :date_evidence
       t.string :styles, array: true, default:[]
-      t.text :chancel_arch_description
+      t.text :notes
     
       t.belongs_to :fabric, index: true
       t.timestamps null: false

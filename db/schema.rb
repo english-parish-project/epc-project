@@ -33,11 +33,11 @@ ActiveRecord::Schema.define(version: 20160528175637) do
     t.string   "date"
     t.boolean  "date_secured"
     t.text     "date_evidence"
-    t.string   "styles",                   default: [],              array: true
-    t.text     "chancel_arch_description"
+    t.string   "styles",        default: [],              array: true
+    t.text     "notes"
     t.integer  "fabric_id"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "chancels", ["fabric_id"], name: "index_chancels_on_fabric_id", using: :btree
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 20160528175637) do
     t.text     "earliest_extant_fabric_date_evidence"
     t.boolean  "earliest_extant_fabric_date_secured"
     t.text     "earliest_extant_fabric_location"
-    t.text     "general_comments"
+    t.text     "notes"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
   end
@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(version: 20160528175637) do
     t.text     "date_evidence"
     t.string   "location"
     t.string   "styles",        default: [],              array: true
-    t.text     "general_notes"
+    t.text     "notes"
     t.integer  "fabric_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
