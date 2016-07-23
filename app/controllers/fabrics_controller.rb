@@ -1,16 +1,27 @@
 class FabricsController < ApplicationController
   
-  def edit
+  def edit_part1
     @fabric = Fabric.find(params[:id])
     FabricHelper.build_fabric_information(@fabric)
     @date_ranges = FabricHelper.date_ranges
+    render 'fabrics/form_part1'  
+  end
+  
+  def edit_part2
+    @fabric = Fabric.find(params[:id])
+    render 'fabrics/form_part2'
   end
 
   def update
     @fabric = Fabric.find(params[:id])
     @fabric.update(fabric_params)
-    redirect_to root_path
+    if request.fullpath == fabric_form_part1_path(@fabric)
+      redirect_to fabric_form_part2_path(params[:id])
+    else  
+      redirect_to root_path
+    end
   end
+  
   
   private 
   

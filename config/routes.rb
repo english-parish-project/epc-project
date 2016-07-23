@@ -2,14 +2,15 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
   root 'churches#index'
- 
-  resources :churches do
-    resources :fabrics, shallow: true do
-      resources :nave
-    end
-  end
-
+  resources :churches 
+  get ':id/fabrics_part1', to: 'fabrics#edit_part1', as: 'fabric_form_part1'
+  put ':id/fabrics_part1', to: 'fabrics#update'
   
+  get ':id/fabrics_part2', to: 'fabrics#edit_part2', as: 'fabric_form_part2'
+  put ':id/fabrics_part2', to: 'fabrics#update'
+
+  # post '/church_id/fabric-form/part1', to: 'fabric#update', as: 'part1'
+  # 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
