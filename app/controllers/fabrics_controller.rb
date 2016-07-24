@@ -47,6 +47,8 @@ class FabricsController < ApplicationController
     [:id, :date, :date_secured, :date_evidence, :notes, styles:[]], 
     piscina_attributes: 
     [:id, :date, :date_secured, :date_evidence, :location, :notes],  
+    font_attributes: 
+    [:id, :date, :date_secured, :date_evidence, :location, :notes],  
     styles:[])
   end 
 end

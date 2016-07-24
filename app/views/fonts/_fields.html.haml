@@ -1,0 +1,8 @@
+%h4
+  .label.label-warning Add Font Information:
+.font
+  = font_form.input :date, collection: @date_ranges, prompt: "Select Date"
+  = font_form.input :date_secured, label: 'Date Secured?',  as: :select
+  = font_form.input :date_evidence
+  = font_form.input :location
+  = font_form.input :notes

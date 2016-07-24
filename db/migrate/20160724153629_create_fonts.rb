@@ -1,4 +1,4 @@
-class CreateFont < ActiveRecord::Migration
+class CreateFonts < ActiveRecord::Migration
   def change
     create_table :fonts do |t|
       t.text :location

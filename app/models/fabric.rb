@@ -35,5 +35,8 @@ class Fabric < ActiveRecord::Base
   has_many :towers
   accepts_nested_attributes_for :towers, reject_if: :all_blank, allow_destroy: true
   
+  has_one :font
+  accepts_nested_attributes_for :font,  reject_if: :all_blank, allow_destroy: true
+  
   belongs_to :church
 end
