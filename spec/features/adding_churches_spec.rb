@@ -155,5 +155,17 @@ feature 'adding a church' do
       expect(page).to have_content "Sedilia"
     end
     
+    scenario 'adding piscina information' do
+      within('.piscina') do
+        select '700-725', :from => 'Date'
+        select 'Yes', from: "fabric[piscina_attributes][date_secured]"
+        fill_in "fabric[piscina_attributes][date_evidence]", with: "Lorem ipsum dolor sit amet."
+        fill_in "fabric[piscina_attributes][location]", with: "Quisque velit nisi."
+        fill_in "fabric[piscina_attributes][notes]", with: "Notes Quisque velit nisi."
+      end
+      click_button 'Submit'
+      visit church_path(church.id)
+      expect(page).to have_content "Piscina"
+    end
   end
 end

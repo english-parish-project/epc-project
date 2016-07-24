@@ -34,7 +34,7 @@ class FabricsController < ApplicationController
     chantry_chapels_attributes:
     [:id, :date, :date_secured, :date_evidence, :location, :funding_information, :notes, styles:[]], 
     altar_attributes: 
-    [:id, :date, :date_secured, :date_evidence, :location, :medieval_altar, :location_in_chancel, :notes], 
+    [:id, :date, :date_secured, :date_evidence, :medieval_altar, :location_in_chancel, :notes], 
     towers_attributes: 
     [:id, :location, :date, :date_secured, :date_evidence, :notes],
     chancel_attributes: 
@@ -44,7 +44,9 @@ class FabricsController < ApplicationController
     porch_attributes: 
     [:id, :date, :date_secured, :date_evidence, :location, :vaulting, :vaulting_type, :notes],
     sedilia_attributes: 
-    [:id, :date, :date_secured, :date_evidence, :notes, styles:[]],  
+    [:id, :date, :date_secured, :date_evidence, :notes, styles:[]], 
+    piscina_attributes: 
+    [:id, :date, :date_secured, :date_evidence, :location, :notes],  
     styles:[])
   end 
 end

@@ -47,3 +47,7 @@
 - if @church.fabric.sedilia.present?
   %h3 Sedilia
   = render partial: "sedilias/attributes", locals: {church: @church}
+
+- if @church.fabric.piscina.present?
+  %h3 Piscina
+  = render partial: "piscinas/attributes", locals: {church: @church}
