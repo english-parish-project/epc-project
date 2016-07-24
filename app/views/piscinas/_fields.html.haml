@@ -1,0 +1,8 @@
+%h4
+  .label.label-warning Add Piscina Information:
+.piscina
+  = piscina_form.input :date, collection: @date_ranges, prompt: "Select Date"
+  = piscina_form.input :date_secured, label: 'Date Secured?',  as: :select
+  = piscina_form.input :date_evidence
+  = piscina_form.input :location
+  = piscina_form.input :notes

@@ -1,0 +1,2 @@
+class PiscinasController < ApplicationController
+end
