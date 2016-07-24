@@ -67,12 +67,18 @@ feature 'viewing churches' do
     
     scenario 'tower information' do
       visit church_path(church.id)
-      expect(page).to have_content 
       expect(page).to have_content "#{church.fabric.towers.first.date}"
       expect(page).to have_content "#{church.fabric.towers.first.date_secured}"
       expect(page).to have_content "#{church.fabric.towers.first.date_evidence}"
       expect(page).to have_content "#{church.fabric.towers.first.location}"
       expect(page).to have_content "#{church.fabric.towers.first.notes}"
+    end
+    
+    scenario 'door information' do
+      visit church_path(church.id)
+      expect(page).to have_content "#{church.fabric.doors.first.original}"
+      expect(page).to have_content "#{church.fabric.doors.first.location}"
+      expect(page).to have_content "#{church.fabric.doors.first.notes}"
     end
   end
 end

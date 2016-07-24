@@ -92,7 +92,7 @@ feature 'adding a church' do
       end
       click_button 'Submit'
       visit church_path(church.id)
-      expect(page).to have_content "Tower #{church.fabric.towers.first.id}"
+      expect(page).to have_content "Tower 1"
     end
     
     scenario 'adding Chantry Chapel information' do
@@ -106,7 +106,7 @@ feature 'adding a church' do
       end
       click_button 'Submit'
       visit church_path(church.id)
-      expect(page).to have_content "Chantry Chapel #{church.fabric.chantry_chapels.first.id}"
+      expect(page).to have_content "Chantry Chapel 1"
     end
     
     scenario 'adding door information' do
@@ -117,7 +117,7 @@ feature 'adding a church' do
       end
       click_button 'Submit'
       visit church_path(church.id)
-      expect(page).to have_content "Door #{church.fabric.doors.first.id}"
+      expect(page).to have_content "Door 1"
     end
   end
 end

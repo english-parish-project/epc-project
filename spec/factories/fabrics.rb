@@ -13,6 +13,7 @@ FactoryGirl.define do
       association :chancel
       after(:create) { |fabric| create(:chantry_chapel, fabric: fabric) }
       after(:create) { |fabric| create(:tower, fabric: fabric) }
+      after(:create) { |fabric| create(:door, fabric: fabric) }
     end
   end
 end

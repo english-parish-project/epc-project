@@ -23,18 +23,18 @@
 
 - if @church.fabric.towers.present?
   %h3 Towers
-  - @church.fabric.towers.each do |tower|                
+  - @church.fabric.towers.each_with_index do |tower, num|                
     %div  
-    = render partial: "towers/attributes", locals: {tower: tower}
+    = render partial: "towers/attributes", locals: {tower: tower, num: num}
   
 - if @church.fabric.chantry_chapels.present?
   %h3 Chantry Chapels 
-  - @church.fabric.chantry_chapels.each do |chantry_chapel|     
+  - @church.fabric.chantry_chapels.each_with_index do |chantry_chapel, num|     
     %div  
-    = render partial: "chantry_chapels/attributes", locals: {chantry_chapel: chantry_chapel}
+    = render partial: "chantry_chapels/attributes", locals: {chantry_chapel: chantry_chapel, num: num}
 
 - if @church.fabric.doors.present?
   %h3 Doors
-  - @church.fabric.doors.each do |door|                
+  - @church.fabric.doors.each_with_index do |door, num|                
     %div  
-    = render partial: "doors/attributes", locals: {door: door}
+    = render partial: "doors/attributes", locals: {door: door, num: num}
