@@ -40,13 +40,16 @@ module FabricHelper
     "Post 1600"]
   end
   
-  def self.build_fabric_information(fabric)
+  def self.build_information_part1(fabric)
     fabric.build_nave
-    fabric.build_chancel
-    fabric.build_altar
     fabric.towers.build
-    fabric.chantry_chapels.build
     fabric.doors.build
     fabric.build_porch
+  end
+  
+  def self.build_information_part2(fabric)
+    fabric.build_chancel
+    fabric.build_altar
+    fabric.chantry_chapels.build
   end
 end

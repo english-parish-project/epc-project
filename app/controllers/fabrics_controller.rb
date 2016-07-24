@@ -2,13 +2,15 @@ class FabricsController < ApplicationController
   
   def edit_part1
     @fabric = Fabric.find(params[:id])
-    FabricHelper.build_fabric_information(@fabric)
+    FabricHelper.build_information_part1(@fabric)
     @date_ranges = FabricHelper.date_ranges
     render 'fabrics/form_part1'  
   end
   
   def edit_part2
     @fabric = Fabric.find(params[:id])
+    FabricHelper.build_information_part2(@fabric)
+    @date_ranges = FabricHelper.date_ranges
     render 'fabrics/form_part2'
   end
 
