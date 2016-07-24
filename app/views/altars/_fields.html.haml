@@ -1,0 +1,9 @@
+%h4
+  .label.label-warning Add Altar Information:
+.altar
+  = altar_form.input :medieval_altar, ladel: 'Medieval Altar?',  as: :select
+  = altar_form.input :date, collection: @date_ranges, prompt: "Select Date"
+  = altar_form.input :date_secured, label: 'Date Secured?',  as: :select
+  = altar_form.input :date_evidence
+  = altar_form.input :location_in_chancel
+  = altar_form.input :notes

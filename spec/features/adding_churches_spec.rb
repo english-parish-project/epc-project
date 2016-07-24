@@ -64,6 +64,7 @@ feature 'adding a church' do
         select 'Yes', from: "fabric[altar_attributes][date_secured]"
         fill_in "fabric[altar_attributes][date_evidence]", with: "Lorem ipsum dolor sit amet."
         fill_in "fabric[altar_attributes][location_in_chancel]", with: "Quisque velit nisi."
+        fill_in "fabric[altar_attributes][notes]", with: "Notes Quisque velit nisi."
       end
       click_button 'Submit'
       visit church_path(church.id)

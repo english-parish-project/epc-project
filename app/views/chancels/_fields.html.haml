@@ -1,0 +1,10 @@
+%h4
+  .label.label-warning Add Chancel Information:
+.chancel
+  = chancel_form.input :date, collection: @date_ranges, prompt: "Select Date"
+  = chancel_form.input :date_secured, label: 'Date Secured?', as: :select
+  = chancel_form.input :date_evidence
+  = chancel_form.collection_check_boxes(:styles, Style.all, :name, :name, include_hidden: false) do |style|
+    .checkbox-inline
+      = style.check_box + style.text
+  = chancel_form.input :notes

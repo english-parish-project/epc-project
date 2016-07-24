@@ -44,6 +44,7 @@ feature 'viewing churches' do
       expect(page).to have_content "#{church.fabric.altar.date_secured}"
       expect(page).to have_content "#{church.fabric.altar.date_evidence}"
       expect(page).to have_content "#{church.fabric.altar.location_in_chancel}"
+      expect(page).to have_content "#{church.fabric.altar.notes}"
     end
     
     scenario 'chancel information' do
