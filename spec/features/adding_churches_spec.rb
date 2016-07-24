@@ -141,5 +141,19 @@ feature 'adding a church' do
       visit church_path(church.id)
       expect(page).to have_content "Chantry Chapel 1"
     end
+    
+    scenario 'adding sedilia' do 
+      within('.sedilia') do
+        select '700-725', :from => 'Date'
+        select 'No', from: "fabric[sedilia_attributes][date_secured]"
+        find("#fabric_sedilia_attributes_styles_saxon-norman_overlap").set(true)
+        fill_in "fabric[sedilia_attributes][date_evidence]", with: "Lorem ipsum dolor sit amet."
+        fill_in "fabric[sedilia_attributes][notes]", with: "fabric general notes"
+      end
+      click_button 'Submit'
+      visit church_path(church.id)
+      expect(page).to have_content "Sedilia"
+    end
+    
   end
 end

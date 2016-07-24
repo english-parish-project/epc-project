@@ -42,7 +42,9 @@ class FabricsController < ApplicationController
     doors_attributes: 
     [:id, :location, :original, :notes],
     porch_attributes: 
-    [:id, :date, :date_secured, :date_evidence, :location, :vaulting, :vaulting_type, :notes], 
+    [:id, :date, :date_secured, :date_evidence, :location, :vaulting, :vaulting_type, :notes],
+    sedilia_attributes: 
+    [:id, :date, :date_secured, :date_evidence, :notes, styles:[]],  
     styles:[])
   end 
 end

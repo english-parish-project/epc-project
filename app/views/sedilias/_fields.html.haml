@@ -1,0 +1,11 @@
+%h4
+  .label.label-warning Add Sedilia Information:
+.sedilia
+  %strong Select Style(s):
+  = sedilia_form.collection_check_boxes(:styles, Style.all, :name, :name, include_hidden: false) do |style|
+    .checkbox-inline
+      = style.check_box + style.text
+  = sedilia_form.input :date, collection: @date_ranges, prompt: "Select Date"
+  = sedilia_form.input :date_secured, label: 'Date Secured?', as: :select
+  = sedilia_form.input :date_evidence
+  = sedilia_form.input :notes

@@ -51,5 +51,6 @@ module FabricHelper
     fabric.build_chancel
     fabric.build_altar
     fabric.chantry_chapels.build
+    fabric.build_sedilia
   end
 end
