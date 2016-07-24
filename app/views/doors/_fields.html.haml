@@ -1,0 +1,8 @@
+%h4
+  .label.label-warning Add Door Information:
+.door
+  .nested-fields
+    = f.input :location
+    = f.input :original, label: 'Original?', as: :select
+    = f.input :notes
+    = link_to_remove_association "remove tower", f

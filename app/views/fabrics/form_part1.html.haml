@@ -25,5 +25,10 @@
       = f.simple_fields_for :chancel do |chancel_form|
         = render partial: "chancels/fields", locals: {chancel_form: chancel_form}
       
+      = f.simple_fields_for :doors do |door|
+        = render partial: 'doors/fields', locals: {f: door}
+      .links
+        = link_to_add_association 'add door', f, :doors, partial: 'doors/fields'
+          
       .btn.btn-primary
         = f.submit 'Submit'
