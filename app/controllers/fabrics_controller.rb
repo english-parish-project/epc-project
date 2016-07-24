@@ -39,6 +39,8 @@ class FabricsController < ApplicationController
     [:id, :date, :date_secured, :date_evidence, :notes, styles:[]],
     doors_attributes: 
     [:id, :location, :original, :notes],
+    porch_attributes: 
+    [:id, :date, :date_secured, :date_evidence, :location, :vaulting, :vaulting_type, :notes], 
     styles:[])
   end 
 end

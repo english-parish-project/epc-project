@@ -47,5 +47,6 @@ module FabricHelper
     fabric.towers.build
     fabric.chantry_chapels.build
     fabric.doors.build
+    fabric.build_porch
   end
 end
