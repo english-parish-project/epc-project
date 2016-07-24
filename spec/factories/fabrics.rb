@@ -12,6 +12,7 @@ FactoryGirl.define do
       association :altar
       association :chancel
       association :porch
+      association :sedilia
       after(:create) { |fabric| create(:chantry_chapel, fabric: fabric) }
       after(:create) { |fabric| create(:tower, fabric: fabric) }
       after(:create) { |fabric| create(:door, fabric: fabric) }

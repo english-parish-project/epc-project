@@ -91,5 +91,15 @@ feature 'viewing churches' do
       expect(page).to have_content "#{church.fabric.porch.location}"
       expect(page).to have_content "#{church.fabric.porch.notes}"
     end
+    
+    scenario 'sedilia information' do
+      visit church_path(church.id)
+      expect(page).to have_content "#{church.fabric.sedilia.date}"
+      expect(page).to have_content "#{church.fabric.sedilia.date_secured}"
+      expect(page).to have_content "#{church.fabric.sedilia.date_evidence}"
+      expect(page).to have_content "#{church.fabric.sedilia.styles.first}"
+      expect(page).to have_content "#{church.fabric.sedilia.notes}"
+    end
+    
   end
 end
