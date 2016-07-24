@@ -59,3 +59,7 @@
 - if @church.fabric.screen.present?
   %h3 Screen
   = render partial: "screens/attributes", locals: {church: @church}
+
+- if @church.fabric.transept.present?
+  %h3 Transept
+  = render partial: "transepts/attributes", locals: {church: @church}

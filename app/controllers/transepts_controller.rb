@@ -1,0 +1,2 @@
+class TranseptsController < ApplicationController
+end

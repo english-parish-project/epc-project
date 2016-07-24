@@ -11,7 +11,7 @@ class CreateTransepts < ActiveRecord::Migration
       t.boolean :north_side
       t.string :north_side_date
       t.boolean :north_side_date_secured
-      t.string :south_side_date_evidence
+      t.string :north_side_date_evidence
       t.boolean :north_side_aisled
       t.string :north_side_notes
        

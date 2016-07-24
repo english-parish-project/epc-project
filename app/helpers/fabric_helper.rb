@@ -55,5 +55,6 @@ module FabricHelper
     fabric.build_piscina
     fabric.build_font
     fabric.build_screen
+    fabric.build_transept
   end
 end
