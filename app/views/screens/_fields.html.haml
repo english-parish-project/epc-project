@@ -1,0 +1,7 @@
+%h4
+  .label.label-warning Add Screen Information:
+.screen
+  = screen_form.input :date, collection: @date_ranges, prompt: "Select Date"
+  = screen_form.input :date_secured, label: 'Date Secured?',  as: :select
+  = screen_form.input :date_evidence
+  = screen_form.input :notes

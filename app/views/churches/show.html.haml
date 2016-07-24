@@ -55,3 +55,7 @@
 - if @church.fabric.font.present?
   %h3 Font
   = render partial: "fonts/attributes", locals: {church: @church}
+  
+- if @church.fabric.screen.present?
+  %h3 Screen
+  = render partial: "screens/attributes", locals: {church: @church}
