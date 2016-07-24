@@ -108,5 +108,16 @@ feature 'adding a church' do
       visit church_path(church.id)
       expect(page).to have_content "Chantry Chapel #{church.fabric.chantry_chapels.first.id}"
     end
+    
+    scenario 'adding door information' do
+      within('.door') do
+        fill_in "fabric[doors_attributes][0][location]", with: "Lorem ipsum dolor sit amet."
+        select 'Yes', from: "fabric[doors_attributes][0][original]"
+        fill_in "fabric[doors_attributes][0][notes]", with: "Quisque velit nisi."
+      end
+      click_button 'Submit'
+      visit church_path(church.id)
+      expect(page).to have_content "Door #{church.fabric.doors.first.id}"
+    end
   end
 end

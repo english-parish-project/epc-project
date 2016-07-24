@@ -32,3 +32,9 @@
   - @church.fabric.chantry_chapels.each do |chantry_chapel|     
     %div  
     = render partial: "chantry_chapels/attributes", locals: {chantry_chapel: chantry_chapel}
+
+- if @church.fabric.doors.present?
+  %h3 Doors
+  - @church.fabric.doors.each do |door|                
+    %div  
+    = render partial: "doors/attributes", locals: {door: door}

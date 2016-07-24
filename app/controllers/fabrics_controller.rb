@@ -36,6 +36,9 @@ class FabricsController < ApplicationController
     towers_attributes: 
     [:id, :location, :date, :date_secured, :date_evidence, :notes],
     chancel_attributes: 
-    [:id, :date, :date_secured, :date_evidence, :notes, styles:[]], styles:[])
+    [:id, :date, :date_secured, :date_evidence, :notes, styles:[]],
+    doors_attributes: 
+    [:id, :location, :original, :notes],
+    styles:[])
   end 
 end

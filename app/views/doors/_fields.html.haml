@@ -3,8 +3,6 @@
 .door
   .nested-fields
     = f.input :location
-    = f.input :date, collection: @date_ranges, prompt: "Select Date"
-    = f.input :date_secured, label: 'Date Secured?', as: :select
-    = f.input :date_evidence
+    = f.input :original, label: 'Original?', as: :select
     = f.input :notes
     = link_to_remove_association "remove tower", f
