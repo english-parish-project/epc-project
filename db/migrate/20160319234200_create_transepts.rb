@@ -6,8 +6,7 @@ class CreateTransepts < ActiveRecord::Migration
       t.boolean :south_side_date_secured
       t.string :south_side_date_evidence
       t.boolean :south_side_aisled
-      t.string :south_side_notes
-      
+      t.string :south_side_notes      
       t.boolean :north_side
       t.string :north_side_date
       t.boolean :north_side_date_secured

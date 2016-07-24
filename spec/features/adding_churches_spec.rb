@@ -199,7 +199,7 @@ feature 'adding a church' do
         select '700-725', :from => "fabric[transept_attributes][south_side_date]"
         select 'Yes', from: "fabric[transept_attributes][south_side_date_secured]"
         fill_in "fabric[transept_attributes][south_side_date_evidence]", with: "Lorem ipsum dolor sit amet."
-        select 'No', from: "fabric[transept_attributes][south_side_aisled]"
+        select 'Yes', from: "fabric[transept_attributes][south_side_aisled]"
         fill_in "fabric[transept_attributes][south_side_notes]", with: "Notes Quisque velit nisi."
         
         select 'Yes', from: "fabric[transept_attributes][north_side]"
