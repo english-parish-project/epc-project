@@ -51,3 +51,7 @@
 - if @church.fabric.piscina.present?
   %h3 Piscina
   = render partial: "piscinas/attributes", locals: {church: @church}
+
+- if @church.fabric.font.present?
+  %h3 Font
+  = render partial: "fonts/attributes", locals: {church: @church}

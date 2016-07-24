@@ -53,5 +53,6 @@ module FabricHelper
     fabric.chantry_chapels.build
     fabric.build_sedilia
     fabric.build_piscina
+    fabric.build_font
   end
 end

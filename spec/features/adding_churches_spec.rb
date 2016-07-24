@@ -167,5 +167,18 @@ feature 'adding a church' do
       visit church_path(church.id)
       expect(page).to have_content "Piscina"
     end
+    
+    scenario 'adding font information' do
+      within('.font') do
+        select '700-725', :from => 'Date'
+        select 'Yes', from: "fabric[font_attributes][date_secured]"
+        fill_in "fabric[font_attributes][date_evidence]", with: "Lorem ipsum dolor sit amet."
+        fill_in "fabric[font_attributes][location]", with: "Quisque velit nisi."
+        fill_in "fabric[font_attributes][notes]", with: "Notes Quisque velit nisi."
+      end
+      click_button 'Submit'
+      visit church_path(church.id)
+      expect(page).to have_content "Font"
+    end
   end
 end
