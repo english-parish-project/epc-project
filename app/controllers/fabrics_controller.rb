@@ -50,7 +50,9 @@ class FabricsController < ApplicationController
     font_attributes: 
     [:id, :date, :date_secured, :date_evidence, :location, :notes],  
     screen_attributes: 
-    [:id, :date, :date_secured, :date_evidence, :notes], 
+    [:id, :date, :date_secured, :date_evidence, :notes],
+    transept_attributes: 
+    [:id, :south_side, :south_side_date, :south_side_date_secured, :south_side_date_evidence, :south_side_aisled, :south_side_notes, :north_side, :north_side_date, :north_side_date_secured, :north_side_date_evidence, :north_side_aisled, :north_side_notes], 
     styles:[])
   end 
 end

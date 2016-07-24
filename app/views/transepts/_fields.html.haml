@@ -1,0 +1,16 @@
+%h4
+  .label.label-warning Add Transept Information:
+.transept
+  = transept_form.input :south_side, label: 'South Side?',  as: :select
+  = transept_form.input :south_side_date, collection: @date_ranges, prompt: "Select Date"
+  = transept_form.input :south_side_date_secured, label: 'Date Secured?',  as: :select
+  = transept_form.input :south_side_date_evidence
+  = transept_form.input :south_side_aisled, label: 'South Side Aisled?',  as: :select
+  = transept_form.input :south_side_notes
+  
+  = transept_form.input :north_side, label: 'North Side?',  as: :select
+  = transept_form.input :north_side_date, collection: @date_ranges, prompt: "Select Date"
+  = transept_form.input :north_side_date_secured, label: 'Date Secured?',  as: :select
+  = transept_form.input :north_side_date_evidence
+  = transept_form.input :north_side_aisled, label: 'North Side Aisled?',  as: :select
+  = transept_form.input :north_side_notes

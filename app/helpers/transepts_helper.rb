@@ -1,0 +1,2 @@
+module TranseptsHelper
+end

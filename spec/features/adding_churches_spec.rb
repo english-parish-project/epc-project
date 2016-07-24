@@ -192,5 +192,26 @@ feature 'adding a church' do
       visit church_path(church.id)
       expect(page).to have_content "Screen"
     end
+    
+    scenario 'adding transept information' do
+      within('.transept') do
+        select 'Yes', from: "fabric[transept_attributes][south_side]"
+        select '700-725', :from => "fabric[transept_attributes][south_side_date]"
+        select 'Yes', from: "fabric[transept_attributes][south_side_date_secured]"
+        fill_in "fabric[transept_attributes][south_side_date_evidence]", with: "Lorem ipsum dolor sit amet."
+        select 'Yes', from: "fabric[transept_attributes][south_side_aisled]"
+        fill_in "fabric[transept_attributes][south_side_notes]", with: "Notes Quisque velit nisi."
+        
+        select 'Yes', from: "fabric[transept_attributes][north_side]"
+        select '700-725', :from => "fabric[transept_attributes][north_side_date]"
+        select 'Yes', from: "fabric[transept_attributes][north_side_date_secured]"
+        fill_in "fabric[transept_attributes][north_side_date_evidence]", with: "Lorem ipsum dolor sit amet."
+        select 'No', from: "fabric[transept_attributes][north_side_aisled]"
+        fill_in "fabric[transept_attributes][north_side_notes]", with: "Notes Quisque velit nisi."
+      end
+      click_button 'Submit'
+      visit church_path(church.id)
+      expect(page).to have_content "Transept"
+    end
   end
 end

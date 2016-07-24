@@ -126,5 +126,21 @@ feature 'viewing churches' do
       expect(page).to have_content "#{church.fabric.screen.date_evidence}"
       expect(page).to have_content "#{church.fabric.screen.notes}"
     end
+    
+    scenario 'transept information' do
+      visit church_path(church.id)
+      expect(page).to have_content "#{church.fabric.transept.south_side}"
+      expect(page).to have_content "#{church.fabric.transept.south_side_date}"
+      expect(page).to have_content "#{church.fabric.transept.south_side_date_secured}"
+      expect(page).to have_content "#{church.fabric.transept.south_side_date_evidence}"
+      expect(page).to have_content "#{church.fabric.transept.south_side_aisled}"
+      expect(page).to have_content "#{church.fabric.transept.south_side_notes}"
+      expect(page).to have_content "#{church.fabric.transept.north_side}"
+      expect(page).to have_content "#{church.fabric.transept.north_side_date}"
+      expect(page).to have_content "#{church.fabric.transept.north_side_date_secured}"
+      expect(page).to have_content "#{church.fabric.transept.north_side_date_evidence}"
+      expect(page).to have_content "#{church.fabric.transept.north_side_aisled}"
+      expect(page).to have_content "#{church.fabric.transept.north_side_notes}"
+    end
   end
 end

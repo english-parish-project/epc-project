@@ -225,6 +225,7 @@ ActiveRecord::Schema.define(version: 20160724153629) do
     t.boolean  "north_side"
     t.string   "north_side_date"
     t.boolean  "north_side_date_secured"
+    t.string   "north_side_date_evidence"
     t.boolean  "north_side_aisled"
     t.string   "north_side_notes"
     t.integer  "fabric_id"

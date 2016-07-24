@@ -1,4 +1,3 @@
-
 FactoryGirl.define do
   factory :nave do
     date "700-725"
