@@ -1,153 +1,25 @@
-%h1= @church.name.capitalize
-
-%div
-Town:
-= @church.town
-
-%div
-County:
-= @church.county
-
-%div
-Building of England Volume:
-= @church.buildings_of_england_volume
-
-%div
-Diocese:
-= @church.diocese
-
-%div
-Archdeaconry:
-= @church.archdeaconry
-
-%div
-Longitude:
-= @church.longitude
-
-%div
-latitude:
-= @church.latitude
-  
-%div
-Minster Status: 
-= @church.minster_status
-
-%div
-Minster Current Status: 
-= @church.minster_current_status
-
-%div
-Collegiate Status: 
-= @church.collegiate_status
-
-%div
-Collegiate Date: 
-= @church.collegiate_date
-
-%div
-Date First Mentioned in Text:
-= @church.first_mentioned_in_text
-
-%div
-First Mentioned in Text Information: 
-= @church.first_mentioned_in_text_explanation
-
-%div
-Earliest Extant Fabric Date:
-= @church.earliest_extant_fabric_date
-
-%div
-Date Secured: 
-= @church.earliest_extant_fabric_date_secured
-
-%div
-Information on Earliest Extant Fabrtic Date:
-= @church.earliest_extant_fabric_date_evidence
-
-%div
-Location of Earliest Extant Fabrtic Date:
-= @church.earliest_extant_fabric_location
-
-%div
-Notes:
-= @church.notes
-
-- if @church.fabric.nave.present?
+= render partial: "attributes", locals: {church: @church}
+ 
+- if @church.fabric.present?
   %h2= @church.name.capitalize + " Fabric"
   Styles: 
   - @church.fabric.styles.each do |style|
     %div
     = style
-  
+
+- if @church.fabric.nave.present?
   %h3 Nave
-  %div
-  Date:
-  = @church.fabric.nave.date
-
-  %div
-  Date Secured? 
-  = @church.fabric.nave.date_secured
-
-  %div
-  Information on Date:
-  = @church.fabric.nave.date_evidence
-  
-  %div
-  Styles:
-  - @church.fabric.nave.styles.each do |style|
-    %div
-    = style
-  
-  %div
-  Notes: 
-  = @church.fabric.nave.notes
+  = render partial: "naves/attributes", locals: {church: @church}
  
 - if @church.fabric.altar.present?
   %h3 Altar
-
-  %div
-  Medival Altar?
-  = @church.fabric.altar.medieval_altar
-
-  %div
-  Date:
-  = @church.fabric.altar.date
-
-  %div
-  Date Secured? 
-  = @church.fabric.altar.date_secured
-
-  %div
-  Information on Date:
-  = @church.fabric.altar.date_evidence
-    
-  %div
-  Location:
-  = @church.fabric.altar.location_in_chancel
+  %div  
+  = render partial: "altars/attributes", locals: {church: @church}
 
 - if @church.fabric.chancel.present?
   %h3 Chancel
-  
-  %div
-  Date:
-  = @church.fabric.chancel.date
-
-  %div
-  Date Secured? 
-  = @church.fabric.chancel.date_secured
-
-  %div
-  Information on Date:
-  = @church.fabric.chancel.date_evidence
-  
-  Notes: 
-  = @church.fabric.chancel.notes
-  
-  %div
-  Styles:
-  - @church.fabric.chancel.styles do |style|
-    %div
-    = style
+  %div 
+  = render partial: "chancels/attributes", locals: {church: @church}
 
 - if @church.fabric.towers.present?
   %h3 Towers
@@ -160,7 +32,3 @@ Notes:
   - @church.fabric.chantry_chapels.each do |chantry_chapel|     
     %div  
     = render partial: "chantry_chapels/attributes", locals: {chantry_chapel: chantry_chapel}
-
-      
-  
-  
