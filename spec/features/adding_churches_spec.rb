@@ -180,5 +180,17 @@ feature 'adding a church' do
       visit church_path(church.id)
       expect(page).to have_content "Font"
     end
+    
+    scenario 'adding screen information' do
+      within('.screen') do
+        select '700-725', :from => 'Date'
+        select 'Yes', from: "fabric[screen_attributes][date_secured]"
+        fill_in "fabric[screen_attributes][date_evidence]", with: "Lorem ipsum dolor sit amet."
+        fill_in "fabric[screen_attributes][notes]", with: "Notes Quisque velit nisi."
+      end
+      click_button 'Submit'
+      visit church_path(church.id)
+      expect(page).to have_content "Screen"
+    end
   end
 end

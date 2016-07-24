@@ -49,6 +49,8 @@ class FabricsController < ApplicationController
     [:id, :date, :date_secured, :date_evidence, :location, :notes],  
     font_attributes: 
     [:id, :date, :date_secured, :date_evidence, :location, :notes],  
+    screen_attributes: 
+    [:id, :date, :date_secured, :date_evidence, :notes], 
     styles:[])
   end 
 end

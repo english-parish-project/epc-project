@@ -54,5 +54,6 @@ module FabricHelper
     fabric.build_sedilia
     fabric.build_piscina
     fabric.build_font
+    fabric.build_screen
   end
 end

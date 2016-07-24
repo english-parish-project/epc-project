@@ -15,6 +15,9 @@
       
       = f.simple_fields_for :font do |font_form|
         = render partial: "fonts/fields", locals: {font_form: font_form}    
+          
+      = f.simple_fields_for :screen do |screen_form|
+        = render partial: "screens/fields", locals: {screen_form: screen_form}    
       
       = f.simple_fields_for :chantry_chapels do |chantry_chapel|
         = render partial: 'chantry_chapels/fields', locals: {f: chantry_chapel}
