@@ -160,8 +160,8 @@ ActiveRecord::Schema.define(version: 20160723120048) do
     t.string   "date"
     t.boolean  "date_secured"
     t.text     "date_evidence"
-    t.boolean  "valuting"
-    t.text     "valuting_type"
+    t.boolean  "vaulting"
+    t.text     "vaulting_type"
     t.text     "notes"
     t.integer  "fabric_id"
     t.datetime "created_at",    null: false

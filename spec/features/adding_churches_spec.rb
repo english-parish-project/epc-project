@@ -119,5 +119,20 @@ feature 'adding a church' do
       visit church_path(church.id)
       expect(page).to have_content "Door 1"
     end
+    
+    scenario 'adding porch information' do
+      within('.porch') do
+        select '700-725', from: "fabric[porch_attributes][date]"
+        select 'Yes', from: "fabric[porch_attributes][date_secured]"
+        select 'Yes', from: "fabric[porch_attributes][vaulting]"
+        fill_in "fabric[porch_attributes][vaulting_type]", with: "Lorem ipsum dolor sit amet."
+        fill_in "fabric[porch_attributes][date_evidence]", with: "Lorem ipsum dolor sit amet."
+        fill_in "fabric[porch_attributes][location]", with: "Lorem ipsum dolor sit amet."
+        fill_in "fabric[porch_attributes][notes]", with: "Lorem ipsum dolor sit amet."
+      end
+      click_button 'Submit'
+      visit church_path(church.id)
+      expect(page).to have_content "Porch"
+    end
   end
 end

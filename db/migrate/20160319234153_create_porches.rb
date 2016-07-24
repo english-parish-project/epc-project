@@ -5,8 +5,8 @@ class CreatePorches < ActiveRecord::Migration
       t.string :date
       t.boolean :date_secured
       t.text :date_evidence
-      t.boolean :valuting
-      t.text :valuting_type
+      t.boolean :vaulting
+      t.text :vaulting_type
       t.text :notes
        
       t.belongs_to :fabric, index: true

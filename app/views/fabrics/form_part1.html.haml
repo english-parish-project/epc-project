@@ -29,6 +29,9 @@
         = render partial: 'doors/fields', locals: {f: door}
       .links
         = link_to_add_association 'add door', f, :doors, partial: 'doors/fields'
-          
+      
+      = f.simple_fields_for :porch do |porch_form|
+        = render partial: "porches/fields", locals: {porch_form: porch_form}  
+      
       .btn.btn-primary
         = f.submit 'Submit'

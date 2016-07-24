@@ -38,3 +38,8 @@
   - @church.fabric.doors.each_with_index do |door, num|                
     %div  
     = render partial: "doors/attributes", locals: {door: door, num: num}
+
+- if @church.fabric.porch.present?
+  %h3 Porch
+  %div  
+  = render partial: "porches/attributes", locals: {church: @church}
