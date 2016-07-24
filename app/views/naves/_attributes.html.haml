@@ -1,0 +1,21 @@
+%div
+Date:
+= @church.fabric.nave.date
+
+%div
+Date Secured? 
+= @church.fabric.nave.date_secured
+
+%div
+Information on Date:
+= @church.fabric.nave.date_evidence
+
+%div
+Styles:
+- @church.fabric.nave.styles.each do |style|
+  %div
+  = style
+
+%div
+Notes: 
+= @church.fabric.nave.notes
