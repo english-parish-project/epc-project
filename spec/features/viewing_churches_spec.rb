@@ -109,5 +109,14 @@ feature 'viewing churches' do
       expect(page).to have_content "#{church.fabric.piscina.location}"
       expect(page).to have_content "#{church.fabric.piscina.notes}"
     end
+    
+    scenario 'font information' do
+      visit church_path(church.id)
+      expect(page).to have_content "#{church.fabric.font.date}"
+      expect(page).to have_content "#{church.fabric.font.date_secured}"
+      expect(page).to have_content "#{church.fabric.font.date_evidence}"
+      expect(page).to have_content "#{church.fabric.font.location}"
+      expect(page).to have_content "#{church.fabric.font.notes}"
+    end
   end
 end
