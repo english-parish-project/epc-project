@@ -87,6 +87,7 @@ feature 'adding a church' do
         select '700-725', from: "fabric[towers_attributes][0][date]"
         fill_in "fabric[towers_attributes][0][location]", with: "Lorem ipsum dolor sit amet."
         fill_in "fabric[towers_attributes][0][date_evidence]", with: "Quisque velit nisi."
+        fill_in "fabric[towers_attributes][0][notes]", with: "Quisque velit nisi."
       end
       click_button 'Submit'
       visit church_path(church.id)
