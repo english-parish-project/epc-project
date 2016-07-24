@@ -110,27 +110,8 @@ Notes:
 
 - if @church.fabric.chancel.present?
   %h3 Chancel
-  
-  %div
-  Date:
-  = @church.fabric.chancel.date
-
-  %div
-  Date Secured? 
-  = @church.fabric.chancel.date_secured
-
-  %div
-  Information on Date:
-  = @church.fabric.chancel.date_evidence
-  
-  Notes: 
-  = @church.fabric.chancel.notes
-  
-  %div
-  Styles:
-  - @church.fabric.chancel.styles do |style|
-    %div
-    = style
+  %div 
+  = render partial: "chancels/attributes", locals: {church: @church}
 
 - if @church.fabric.towers.present?
   %h3 Towers
@@ -143,7 +124,3 @@ Notes:
   - @church.fabric.chantry_chapels.each do |chantry_chapel|     
     %div  
     = render partial: "chantry_chapels/attributes", locals: {chantry_chapel: chantry_chapel}
-
-      
-  
-  

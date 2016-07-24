@@ -1,0 +1,2 @@
+class ChancelsController < ApplicationController
+end

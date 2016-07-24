@@ -1,0 +1,20 @@
+%div
+Date:
+= @church.fabric.chancel.date
+
+%div
+Date Secured? 
+= @church.fabric.chancel.date_secured
+
+%div
+Information on Date:
+= @church.fabric.chancel.date_evidence
+
+Notes: 
+= @church.fabric.chancel.notes
+
+%div
+Styles:
+- @church.fabric.chancel.styles do |style|
+  %div
+  = style
