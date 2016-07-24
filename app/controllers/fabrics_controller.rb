@@ -2,13 +2,15 @@ class FabricsController < ApplicationController
   
   def edit_part1
     @fabric = Fabric.find(params[:id])
-    FabricHelper.build_fabric_information(@fabric)
+    FabricHelper.build_information_part1(@fabric)
     @date_ranges = FabricHelper.date_ranges
     render 'fabrics/form_part1'  
   end
   
   def edit_part2
     @fabric = Fabric.find(params[:id])
+    FabricHelper.build_information_part2(@fabric)
+    @date_ranges = FabricHelper.date_ranges
     render 'fabrics/form_part2'
   end
 
@@ -40,7 +42,9 @@ class FabricsController < ApplicationController
     doors_attributes: 
     [:id, :location, :original, :notes],
     porch_attributes: 
-    [:id, :date, :date_secured, :date_evidence, :location, :vaulting, :vaulting_type, :notes], 
+    [:id, :date, :date_secured, :date_evidence, :location, :vaulting, :vaulting_type, :notes],
+    sedilia_attributes: 
+    [:id, :date, :date_secured, :date_evidence, :notes, styles:[]],  
     styles:[])
   end 
 end

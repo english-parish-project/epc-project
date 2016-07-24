@@ -43,3 +43,7 @@
   %h3 Porch
   %div  
   = render partial: "porches/attributes", locals: {church: @church}
+  
+- if @church.fabric.sedilia.present?
+  %h3 Sedilia
+  = render partial: "sedilias/attributes", locals: {church: @church}

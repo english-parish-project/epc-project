@@ -1,0 +1,21 @@
+%div
+Date:
+= @church.fabric.sedilia.date
+
+%div
+Date Secured? 
+= @church.fabric.sedilia.date_secured
+
+%div
+Information on Date:
+= @church.fabric.sedilia.date_evidence
+
+%div
+Styles:
+- @church.fabric.sedilia.styles.each do |style|
+  %div
+  = style
+
+%div
+Notes: 
+= @church.fabric.sedilia.notes
