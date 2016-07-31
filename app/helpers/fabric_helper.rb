@@ -50,11 +50,12 @@ module FabricHelper
   def self.build_information_part2(fabric)
     fabric.build_chancel
     fabric.build_altar
-    fabric.chantry_chapels.build
     fabric.build_sedilia
     fabric.build_piscina
     fabric.build_font
     fabric.build_screen
     fabric.build_transept
+    fabric.chantry_chapels.build
+    fabric.build_lady_chapel
   end
 end
