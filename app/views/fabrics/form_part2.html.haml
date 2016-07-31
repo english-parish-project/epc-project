@@ -4,8 +4,10 @@
       = f.simple_fields_for :chancel do |chancel_form|
         = render partial: "chancels/fields", locals: {chancel_form: chancel_form}
 
-      = f.simple_fields_for :altar do |altar_form|
-        = render partial: "altars/fields", locals: {altar_form: altar_form}
+      = f.simple_fields_for :altars do |altar|
+        = render partial: "altars/fields", locals: {f: altar}
+      .links
+        = link_to_add_association 'add altar', f, :altars, partial: 'altars/fields'
       
       = f.simple_fields_for :sedilia do |sedilia_form|
         = render partial: "sedilias/fields", locals: {sedilia_form: sedilia_form}    

@@ -11,10 +11,11 @@
   %h3 Nave
   = render partial: "naves/attributes", locals: {church: @church}
  
-- if @church.fabric.altar.present?
+- if @church.fabric.altars.present?
   %h3 Altar
-  %div  
-  = render partial: "altars/attributes", locals: {church: @church}
+  - @church.fabric.altars.each_with_index do |altar, num|                
+    %div  
+    = render partial: "altars/attributes", locals: {altar: altar, num: num}
 
 - if @church.fabric.chancel.present?
   %h3 Chancel

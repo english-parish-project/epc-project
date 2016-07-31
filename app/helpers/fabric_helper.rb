@@ -49,7 +49,7 @@ module FabricHelper
   
   def self.build_information_part2(fabric)
     fabric.build_chancel
-    fabric.build_altar
+    fabric.altars.build
     fabric.build_sedilia
     fabric.build_piscina
     fabric.build_font

@@ -1,23 +1,26 @@
 %div
+= "Altar #{num + 1}"
+
+%div
 Medival Altar?
-= @church.fabric.altar.medieval_altar
+= altar.medieval_altar
 
 %div
 Date:
-= @church.fabric.altar.date
+= altar.date
 
 %div
 Date Secured? 
-= @church.fabric.altar.date_secured
+= altar.date_secured
 
 %div
 Information on Date:
-= @church.fabric.altar.date_evidence
+= altar.date_evidence
   
 %div
 Location:
-= @church.fabric.altar.location_in_chancel
+= altar.location_in_chancel
   
 %div
 Notes:
-= @church.fabric.altar.notes
+= altar.notes

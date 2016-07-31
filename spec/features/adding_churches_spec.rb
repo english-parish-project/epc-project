@@ -117,15 +117,15 @@ feature 'adding a church' do
     
     scenario 'adding altar information' do
       within('.altar') do
-        select '700-725', :from => 'Date'
-        select 'Yes', from: "fabric[altar_attributes][date_secured]"
-        fill_in "fabric[altar_attributes][date_evidence]", with: "Lorem ipsum dolor sit amet."
-        fill_in "fabric[altar_attributes][location_in_chancel]", with: "Quisque velit nisi."
-        fill_in "fabric[altar_attributes][notes]", with: "Notes Quisque velit nisi."
+        select '700-725', :from => 'fabric[altars_attributes][0][date]'
+        select 'Yes', from: "fabric[altars_attributes][0][date_secured]"
+        fill_in "fabric[altars_attributes][0][date_evidence]", with: "Lorem ipsum dolor sit am"
+        fill_in "fabric[altars_attributes][0][location_in_chancel]", with: "Quisque velit nisi."
+        fill_in "fabric[altars_attributes][0][notes]", with: "Notes Quisque velit nisi."
       end
       click_button 'Submit'
       visit church_path(church.id)
-      expect(page).to have_content "Altar"
+      expect(page).to have_content "Altar 1"
     end
     
     scenario 'adding Chantry Chapel information' do
