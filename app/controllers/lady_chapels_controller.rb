@@ -1,0 +1,2 @@
+class LadyChapelsController < ApplicationController
+end

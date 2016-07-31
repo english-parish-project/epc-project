@@ -26,6 +26,9 @@
         = render partial: 'chantry_chapels/fields', locals: {f: chantry_chapel}
       .links
         = link_to_add_association 'add chantry chapel', f, :chantry_chapels, partial: 'chantry_chapels/fields'
+      
+      = f.simple_fields_for :lady_chapel do |lady_chapel_form|
+        = render partial: "lady_chapels/fields", locals: {lady_chapel_form: lady_chapel_form} 
           
       .btn.btn-primary
         = f.submit 'Submit'

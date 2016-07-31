@@ -63,3 +63,7 @@
 - if @church.fabric.transept.present?
   %h3 Transept
   = render partial: "transepts/attributes", locals: {church: @church}
+  
+- if @church.fabric.lady_chapel.present?
+  %h3 Lady Chapel
+  = render partial: "lady_chapels/attributes", locals: {church: @church}

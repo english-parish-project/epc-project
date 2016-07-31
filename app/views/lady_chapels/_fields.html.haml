@@ -1,0 +1,11 @@
+%h4
+  .label.label-warning Add Lady Chapel Information:
+.lady_chapel
+  = lady_chapel_form.input :location
+  = lady_chapel_form.input :date, collection: @date_ranges, prompt: "Select Date"
+  = lady_chapel_form.input :date_secured, label: 'Date Secured?', as: :select
+  = lady_chapel_form.input :date_evidence
+  = lady_chapel_form.collection_check_boxes(:styles, Style.all, :name, :name, include_hidden: false) do |style|
+    .checkbox-inline
+      = style.check_box + style.text
+  = lady_chapel_form.input :notes

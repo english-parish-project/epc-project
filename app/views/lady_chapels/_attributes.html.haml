@@ -1,0 +1,25 @@
+%div
+Date:
+= @church.fabric.lady_chapel.date
+
+%div
+Date Secured? 
+= @church.fabric.lady_chapel.date_secured
+
+%div
+Information on Date:
+= @church.fabric.lady_chapel.date_evidence
+
+%div
+Notes: 
+= @church.fabric.lady_chapel.notes
+
+%div
+location: 
+= @church.fabric.lady_chapel.location
+
+%div
+Styles:
+- @church.fabric.lady_chapel.styles do |style|
+  %div
+  = style
